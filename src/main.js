@@ -20,19 +20,21 @@ document.querySelector('#app').innerHTML = `
 <div style="min-height: 70vh;" class="placeHolder" id="Contact"></div>
 </div>
 <div>
-  <section id="title">
-      <h1 class="titleLine">Portfolio</h1>
-      <h1 class="titleLine">Jérémie J.</h1>
-      </section>
-      </div>
-      <div class="projetPage">projet</div>
-</div>
+    <section id="title">
+        <h1 class="titleLine">Portfolio</h1>
+        <h1 class="titleLine">Jérémie J.</h1>
+    </section>
+    </div>
+    </div>
+<div id="projectPage"><h1>test</h1></div>
 `
 
 const scrollBar = document.querySelector('#img_scroll_bar');
 
 // on prend toutes les images + le showreel
 const scrollItems = scrollBar.querySelectorAll('img, .showReel, #Contact');
+const clickableItem = scrollBar.querySelectorAll('img, div');
+
 const title = document.getElementById("title");
 
 // dictionnaire qui mappe un id (ou une class) à du contenu HTML
@@ -66,7 +68,7 @@ scrollBar.addEventListener('scroll', () => {
         closestItem = item;
       }
     });
-    console.log(closestItem);
+
 
 
     if (closestItem) {
@@ -101,7 +103,6 @@ scrollBar.addEventListener('scroll', () => {
 
 
     if (closestItem) {
-      console.log(closestItem);
       // récupère la clé (id ou "showReel")
       let key = closestItem.id ||
         (closestItem.classList.contains("showReel") ? "showReel" : "default");
@@ -117,11 +118,18 @@ scrollBar.addEventListener('scroll', () => {
     }
   }
 });
+const projectPage = document.getElementById('projectPage')
+clickableItem.forEach(item => {
+  item.addEventListener("click", function () {
+    projectPage.style.right = "0vw"
+    console.log(item.id);
 
+    if (item.id === "img2") {
+      console.log("cbon");
 
-
-image2.addEventListener("click", function () {
-  scrollBar.style.right = "80vw"
-  title.style.right = "45vw"
-
+      projectPage.innerHTML = `
+    <h1>yo</h1>
+      `
+    }
+  })
 })

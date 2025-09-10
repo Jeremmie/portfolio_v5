@@ -36,7 +36,6 @@
 section {
   width: 100vw;
   height: 100vh;
-  border: solid 1px black;
   font-family: leMurmure;
 }
 
@@ -106,20 +105,24 @@ section {
   height: 50vh;
 }
 
-.projetPage {
+#projectPage {
   width: 100vw;
   height: 100vh;
   background-color: aqua;
   position: absolute;
   right: -100vw;
   z-index: 10;
+  transition: ease-in, 200ms;
 }
 
 @media screen and (max-width: 500px) {
   .main_container {
-    max-height: 90vh;
-    position: fixed;
+    max-height: 100vh;
+    position: absolute;
+    scroll-snap-type: both mandatory;
   }
+
+
 
   .date {
     position: absolute;
@@ -176,8 +179,31 @@ section {
 
   #title {
     justify-content: end;
-    height: 90vh;
+    height: 100vh;
     border: none;
     padding-left: 15px;
+    padding-bottom: 10vh;
+    position: relative;
   }
+
+  #projectPage {
+    position: relative;
+    right: 0;
+  }
+
+  #contentSection {
+    height: 100vh;
+    /* indispensable */
+    overflow-y: scroll;
+    /* scroll vertical */
+
+  }
+
+  #contentSection>* {
+    height: 100vh;
+    /* chaque enfant fait un écran */
+    scroll-snap-align: start;
+    /* ou center selon l’effet voulu */
+  }
+
 }
