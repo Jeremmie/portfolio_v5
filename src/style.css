@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.titleLine {
+  white-space: nowrap;
+  display: flow-root;
+  font-size: 60vh;
+}
+
+.titleLine::before {
+  content: "";
+  display: table;
+  margin-bottom: calc(-0.5lh + 0.37em);
+}
+
+.titleLine::after {
+  content: "";
+  display: table;
+  margin-bottom: calc(-0.5lh + 0.47em);
+}
+
+@font-face {
+  font-family: leMurmure;
+  src: url(./LeMurmure-Regular.woff2);
+}
+
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  border: solid 1px black;
+  font-family: leMurmure;
+}
+
+#img_scroll_bar {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  overflow-y: auto;
+  /* padding: 90vh 5vw 90vh 0; */
+  /* padding: 0 5vw 0 0; */
+  right: 0vw;
+  transition: ease-in 500ms;
+}
+
+.project_img {
+  width: auto;
+  height: 70vh;
+  object-fit: contain;
+}
+
+
+
+.placeHolder {
+  width: 10px;
+  min-height: 50vh;
+  object-fit: contain;
+}
+
+
+#title {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  right: 0vw;
+  transition: ease-in 600ms;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+#img1 {
+  background: linear-gradient(black, white);
+}
+
+.showReel {
+  min-height: 40vh;
+  width: auto;
+  aspect-ratio: 16/9;
+}
+
+.showReel iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#img2 {
+  height: 42vh;
+}
+
+#img5 {
+  height: 50vh;
+}
+
+.projetPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+  position: absolute;
+  right: -100vw;
+  z-index: 10;
+}
+
+@media screen and (max-width: 500px) {
+  .main_container {
+    max-height: 90vh;
+    position: fixed;
+  }
+
+  .date {
+    position: absolute;
+    top: 8px;
+  }
+
+  #img3 {
+    width: 50vw
+  }
+
+  #img2,
+  #img5 {
+    width: 90vw;
+    height: auto;
+  }
+
+  #img_scroll_bar {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .project_img p {
+    position: absolute;
+    font-size: 3rem;
+    z-index: 3;
+  }
+
+  .project_img {
+    width: 60vw;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .showReel {
+    min-height: auto;
+    min-width: 90vw;
+    aspect-ratio: 16/9;
+    background-color: black;
+  }
+
+  .placeHolder {
+    height: auto;
+    min-width: 0px;
+    background-color: black;
+    object-fit: contain;
+  }
+
+  .titleLine {
+    white-space: nowrap;
+    display: flow-root;
+    font-size: 30vw;
+  }
+
+
+  #title {
+    justify-content: end;
+    height: 90vh;
+    border: none;
+    padding-left: 15px;
+  }
+}
