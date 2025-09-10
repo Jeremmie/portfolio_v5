@@ -118,8 +118,8 @@ section {
 @media screen and (max-width: 500px) {
   .main_container {
     max-height: 100vh;
-    position: absolute;
-    scroll-snap-type: both mandatory;
+    position: relative;
+    scroll-snap-align: center;
   }
 
 
@@ -189,21 +189,13 @@ section {
   #projectPage {
     position: relative;
     right: 0;
+    scroll-snap-align: center;
   }
 
-  #contentSection {
+  #app {
+    scroll-snap-type: y mandatory;
     height: 100vh;
-    /* indispensable */
     overflow-y: scroll;
-    /* scroll vertical */
-
-  }
-
-  #contentSection>* {
-    height: 100vh;
-    /* chaque enfant fait un écran */
-    scroll-snap-align: start;
-    /* ou center selon l’effet voulu */
   }
 
 }
