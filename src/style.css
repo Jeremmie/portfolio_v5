@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: leMurmure;
-  src: url(./LeMurmure-Regular.woff2);
+  src: url(./assets/fonts/lemurmure.woff2);
 }
 
 .main_container {
@@ -108,7 +108,6 @@ section {
 #projectPage {
   width: 100vw;
   height: 100vh;
-  background-color: aqua;
   position: absolute;
   right: -100vw;
   z-index: 10;
@@ -119,7 +118,7 @@ section {
   .main_container {
     max-height: 100vh;
     position: relative;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
   }
 
 
@@ -188,8 +187,9 @@ section {
 
   #projectPage {
     position: relative;
+    overflow-y: scroll;
     right: 0;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
   }
 
   #app {

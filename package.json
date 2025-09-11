@@ -10,6 +10,7 @@
     "host": "vite --host"
   },
   "devDependencies": {
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vite-plugin-string": "^1.2.3"
   }
 }

@@ -1,6 +1,8 @@
 import './style.css'
 import { setupCounter } from './counter.js'
 import img2 from "/img_2.jpg"
+import popofHtml from "./popofProject.js"
+import numaHtml from "./numaProject.js"
 
 
 
@@ -36,11 +38,12 @@ const scrollItems = scrollBar.querySelectorAll('img, .showReel, #Contact');
 const clickableItem = scrollBar.querySelectorAll('img, div');
 
 const title = document.getElementById("title");
+const projectPage = document.getElementById('projectPage')
 
 // dictionnaire qui mappe un id (ou une class) à du contenu HTML
 const titleMap = {
-  img1: ["NUMA", "SUPPLY"],
-  img2: ["POPOF", "??????"],
+  img1: ["NUMA", "SUPPLY", numaHtml],
+  img2: ["POPOF", "??????", popofHtml],
   img3: ["RANDOM", "SH#T 1"],
   img4: ["DIGITAL", "KINGDOM"],
   img5: ["TINY", "TROUBLES"],
@@ -71,19 +74,23 @@ scrollBar.addEventListener('scroll', () => {
 
 
 
+
     if (closestItem) {
       // récupère la clé (id ou "showReel")
       let key = closestItem.id ||
         (closestItem.classList.contains("showReel") ? "showReel" : "default");
 
       // récupère le tableau [ligne1, ligne2] ou "default"
-      const [line1, line2] = titleMap[key] || titleMap.default;
+      const [line1, line2, line3] = titleMap[key] || titleMap.default;
 
       // met à jour le titre
       title.innerHTML = `
         <h1 class="titleLine">${line1}</h1>
         <h1 class="titleLine">${line2}</h1>
       `;
+      projectPage.innerHTML = `
+      ${line3}
+      `
     }
   } else {
 
@@ -118,7 +125,8 @@ scrollBar.addEventListener('scroll', () => {
     }
   }
 });
-const projectPage = document.getElementById('projectPage')
+
+
 clickableItem.forEach(item => {
   item.addEventListener("click", function () {
     projectPage.style.right = "0vw"
