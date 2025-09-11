@@ -3,7 +3,10 @@ import { setupCounter } from './counter.js'
 import img2 from "/img_2.jpg"
 import popofHtml from "./popofProject.js"
 import numaHtml from "./numaProject.js"
-
+import mdHtml from "./md.js"
+import dkHtml from "./DK.js"
+import tinyTroubleshtml from "./Tinytroubles.js"
+import natureMorteHtml from "./natureMorteHtml.js"
 
 
 document.querySelector('#app').innerHTML = `
@@ -28,7 +31,7 @@ document.querySelector('#app').innerHTML = `
     </section>
     </div>
     </div>
-<div id="projectPage"><h1>ça marche pas</h1></div>
+<div id="projectPage"><h1 id="backButton">back</h1><div id="contentPage"></div></div>
 `
 
 const scrollBar = document.querySelector('#img_scroll_bar');
@@ -39,14 +42,15 @@ const clickableItem = scrollBar.querySelectorAll('img, div');
 
 const title = document.getElementById("title");
 const projectPage = document.getElementById('projectPage')
+const contentPage = document.getElementById('contentPage')
 
 // dictionnaire qui mappe un id (ou une class) à du contenu HTML
 const titleMap = {
   img1: ["NUMA", "SUPPLY", numaHtml],
   img2: ["POPOF", "??????", popofHtml],
-  img3: ["RANDOM", "SH#T 1"],
-  img4: ["DIGITAL", "KINGDOM"],
-  img5: ["TINY", "TROUBLES"],
+  img3: ["RANDOM", "SHOT 1", mdHtml],
+  img4: ["DIGITAL", "KINGDOM", dkHtml],
+  img5: ["TINY", "TROUBLES", tinyTroubleshtml],
   img6: ["NATURE", "MORTE"],
   emptyTheBin: ["EMPTY", "THE BIN"],
   Contact: ["LET'S KEEP", "CONTACT"],
@@ -75,6 +79,7 @@ scrollBar.addEventListener('scroll', () => {
 
 
 
+
     if (closestItem) {
       // récupère la clé (id ou "showReel")
       let key = closestItem.id ||
@@ -88,16 +93,42 @@ scrollBar.addEventListener('scroll', () => {
         <h1 class="titleLine">${line1}</h1>
         <h1 class="titleLine">${line2}</h1>
       `;
-      projectPage.innerHTML = `
+      contentPage.innerHTML = `
       ${line3}
       `
+      if (key === "img3") {
+        const secondLine = title.querySelectorAll(".titleLine")[1];
+
+        function glitchLoop() {
+          // attendre un délai random entre 1.5 et 3s
+          const randomDelay = Math.random() * (8000 - 5000) + 5000;
+
+          setTimeout(() => {
+            // passe en "glitched"
+            secondLine.textContent = "SH1T O";
+
+            // après 0.5s on revient à l’original
+            setTimeout(() => {
+              secondLine.textContent = "SHOT 1";
+
+              // on relance la boucle
+              glitchLoop();
+            }, 500);
+
+          }, randomDelay);
+        }
+
+        glitchLoop();
+      }
+
 
       // style --> quand page content est dispo
       if (closestItem.classList.contains("showReel")) {
-        console.log("fckyeah");
         projectPage.style.height = "0vh";
+        projectPage.style.minHeight = "0vh";
       } else {
-        projectPage.style.height = "100vh";
+        projectPage.style.height = "fit-content";
+        projectPage.style.minHeight = "100vh";
       }
     }
   } else {
@@ -131,11 +162,30 @@ scrollBar.addEventListener('scroll', () => {
         <h1 class="titleLine">${line2}</h1>
       `;
 
+      if (key === "img3") {
+        const secondLine = title.querySelectorAll(".titleLine")[1];
 
+        function glitchLoop() {
+          const randomDelay = Math.random() * (6000 - 3000) + 3000;
+
+          setTimeout(() => {
+            secondLine.textContent = "SH1T O";
+
+            setTimeout(() => {
+              secondLine.textContent = "SHOT 1";
+
+              glitchLoop();
+            }, 500);
+
+          }, randomDelay);
+        }
+
+        glitchLoop();
+      }
       clickableItem.forEach(item => {
         item.addEventListener("click", function () {
           projectPage.style.right = "0vw"
-          projectPage.innerHTML = `
+          contentPage.innerHTML = `
           ${line3}
           `
         })
@@ -146,4 +196,15 @@ scrollBar.addEventListener('scroll', () => {
   }
 });
 
+if (x.matches) {
 
+  document.getElementById("img_scroll_bar").addEventListener("click", function () {
+    projectPage.scrollIntoView()
+
+  })
+
+}
+
+document.getElementById("backButton").addEventListener("click", function () {
+  projectPage.style.right = "-100vw"
+})
