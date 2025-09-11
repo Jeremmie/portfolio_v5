@@ -1,5 +1,5 @@
 export default `
-<div style="padding: 15vh 15vw 15vh 15vw;justify-content: center;" class="content_main_container_page">
+<div style="padding: 15vh 15vw 15vh 15vw;justify-content: center;flex-direction: column" class="content_main_container_page">
   <div class="img_container_global">
     <img style="height: 70vh" src="./img/MD1.jpg" alt="Project Marvelous Designer" />
     <div style="display: flex;flex-direction: column;padding-right: 15vw;">

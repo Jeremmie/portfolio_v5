@@ -51,7 +51,7 @@ const titleMap = {
   img3: ["RANDOM", "SHOT 1", mdHtml],
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
-  img6: ["NATURE", "MORTE"],
+  img6: ["NATURE", "MORTE", natureMorteHtml],
   emptyTheBin: ["EMPTY", "THE BIN"],
   Contact: ["LET'S KEEP", "CONTACT"],
   default: ["Portfolio", "Jérémie J."],

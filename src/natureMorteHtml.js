@@ -1,20 +1,11 @@
 export default `
-<div style="padding: 15vh 15vw 15vh 15vw;justify-content: center;" class="content_main_container_page">
-  <div class="img_container_global">
-    <img style="height: 70vh" src="./img/MD1.jpg" alt="Project Marvelous Designer" />
-    <div style="display: flex;flex-direction: column;padding-right: 15vw;">
-      <img style="height: 35vh" src="./img/MD2.jpg" alt="Project Marvelous Designer" />
-      <div style="display: flex;">
-        <img style="height: 35vh" src="./img/MD3.jpg" alt="Project Marvelous Designer" />
-        <img style="height: 35vh" src="./img/MD4.jpg" alt="Project Marvelous Designer" />
-      </div>
+<div style="padding: 15vh 15vw 15vh 15vw;justify-content: center;position: absolute;overflow-x: scroll;" class="content_main_container_page">
+  <div style="left: 15vw;position: absolute;" class="img_container_global" id="natureMortePicture">
+    <img src="./img/STILL_LIFE2.jpg" alt="still life picture" />
+    <img src="./img/STILL_LIFE1.jpg" alt="still life picture" /> 
+    <img src="./img/STILL_LIFE4.jpg" alt="still life picture" />
+    <img src="./img/STILL_LIFE3.jpg" alt="still life picture" />
     </div>
-  </div>
-<p style="width: 300%; margin-top: 10px">
-  Made with:
-  <br>
-  Blender, Marvelous designer<br><br>
-  </p>
 </div>
 `
 

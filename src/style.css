@@ -164,6 +164,7 @@ iframe {
   padding: 15vh 0 15vh 15vw;
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
+  flex-direction: row;
 }
 
 .text_container {
@@ -182,9 +183,14 @@ iframe {
 
 .img_container_global {
   display: flex;
+  width: fit-content;
 }
 
 .content_main_container_page img {
+  height: 70vh;
+}
+
+#natureMortePicture img {
   height: 70vh;
 }
 
@@ -288,6 +294,10 @@ iframe {
   .text_container {
     margin: 0;
     width: 100%;
+  }
+
+  #natureMortePicture img {
+    height: 50vh;
   }
 
 }
