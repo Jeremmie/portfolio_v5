@@ -22,7 +22,7 @@ document.querySelector('#app').innerHTML = `
 <img class="project_img" id="img5" src="./tinytrouble.jpg">
 <img class="project_img" id="img6" src="./stillLife.jpg">
 <img class="project_img" id="emptyTheBin" src="./bin.jpg">
-<div style="min-height: 70vh;" class="placeHolder" id="Contact"></div>
+<div style="min-height: 70vh;min-width: 80vw;background: none;" class="placeHolder" id="Contact"></div>
 </div>
 <div>
     <section id="title">
@@ -208,3 +208,81 @@ if (x.matches) {
 document.getElementById("backButton").addEventListener("click", function () {
   projectPage.style.right = "-100vw"
 })
+
+
+const words = ["_", "Open_", "Open to_", "Open to work_", "Open to work :)_"];
+let index = 0;
+let titleInterval;
+
+function animateTitle() {
+  document.title = words[index];
+  index = (index + 1) % words.length; // boucle
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    // démarre l'animation du titre
+    titleInterval = setInterval(animateTitle, 800);
+  } else {
+    // stoppe quand on revient
+    clearInterval(titleInterval);
+    document.title = "Jérémie Jaouen";
+    index = 0; // reset pour recommencer depuis "Open"
+  }
+});
+
+
+
+const favicon = document.getElementById("favicon");
+
+// Liste des frames
+const frames = [
+  "./img/favicon/favicon.svg",
+  "./img/favicon/1.svg",
+  "./img/favicon/2.svg",
+  "./img/favicon/3.svg",
+  "./img/favicon/2.svg",
+  "./img/favicon/1.svg",
+];
+
+let i = 0;
+let faviconInterval;
+
+// Précharger toutes les frames pour éviter de re-télécharger
+frames.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+function setFavicon(src) {
+  // Supprime l’ancien favicon
+  const old = document.getElementById("favicon");
+  if (old) old.remove();
+
+  // Crée un nouveau lien
+  const link = document.createElement("link");
+  link.id = "favicon";
+  link.rel = "icon";
+  link.type = "image/svg+xml";
+  link.href = src; // pas besoin de ?v=Date.now()
+  document.head.appendChild(link);
+}
+
+// Écoute la visibilité de la page
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    // Page inactive → anime le favicon
+    faviconInterval = setInterval(() => {
+      setFavicon(frames[i % frames.length]);
+      i++;
+    }, 500); // vitesse
+  } else {
+    // Page active → stoppe animation, revient sur la frame 1
+    clearInterval(faviconInterval);
+    setFavicon(frames[0]);
+    i = 0;
+  }
+});
+
+
+
