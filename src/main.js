@@ -28,7 +28,7 @@ document.querySelector('#app').innerHTML = `
     </section>
     </div>
     </div>
-<div id="projectPage"><h1>test</h1></div>
+<div id="projectPage"><h1>ça marche pas</h1></div>
 `
 
 const scrollBar = document.querySelector('#img_scroll_bar');
@@ -91,6 +91,14 @@ scrollBar.addEventListener('scroll', () => {
       projectPage.innerHTML = `
       ${line3}
       `
+
+      // style --> quand page content est dispo
+      if (closestItem.classList.contains("showReel")) {
+        console.log("fckyeah");
+        projectPage.style.height = "0vh";
+      } else {
+        projectPage.style.height = "100vh";
+      }
     }
   } else {
 
@@ -115,29 +123,27 @@ scrollBar.addEventListener('scroll', () => {
         (closestItem.classList.contains("showReel") ? "showReel" : "default");
 
       // récupère le tableau [ligne1, ligne2] ou "default"
-      const [line1, line2] = titleMap[key] || titleMap.default;
+      const [line1, line2, line3] = titleMap[key] || titleMap.default;
 
       // met à jour le titre
       title.innerHTML = `
         <h1 class="titleLine">${line1}</h1>
         <h1 class="titleLine">${line2}</h1>
       `;
+
+
+      clickableItem.forEach(item => {
+        item.addEventListener("click", function () {
+          projectPage.style.right = "0vw"
+          projectPage.innerHTML = `
+          ${line3}
+          `
+        })
+      })
+
+
     }
   }
 });
 
 
-clickableItem.forEach(item => {
-  item.addEventListener("click", function () {
-    projectPage.style.right = "0vw"
-    console.log(item.id);
-
-    if (item.id === "img2") {
-      console.log("cbon");
-
-      projectPage.innerHTML = `
-    <h1>yo</h1>
-      `
-    }
-  })
-})

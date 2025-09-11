@@ -112,6 +112,7 @@ section {
   right: -100vw;
   z-index: 10;
   transition: ease-in, 200ms;
+  background-color: white;
 }
 
 @media screen and (max-width: 500px) {
@@ -190,6 +191,7 @@ section {
     overflow-y: scroll;
     right: 0;
     scroll-snap-align: start;
+    height: 0vh;
   }
 
   #app {
