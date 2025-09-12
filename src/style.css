@@ -63,7 +63,7 @@ section {
 
 .placeHolder {
   width: 10px;
-  min-height: 50vh;
+  min-height: 70vh;
   object-fit: contain;
 }
 
@@ -109,7 +109,7 @@ section {
   width: 100vw;
   height: fit-content;
   min-height: 100vh;
-  position: fixed;
+  position: relative;
   right: -100vw;
   z-index: 10;
   transition: ease-in, 200ms;
@@ -194,6 +194,13 @@ iframe {
 #natureMortePicture img {
   height: 70vh;
 }
+
+#emptyTheBin {
+  min-height: 70vh;
+  width: 30vw;
+}
+
+
 
 @media screen and (max-width: 500px) {
   .main_container {
@@ -301,4 +308,10 @@ iframe {
     height: 50vh;
   }
 
+  #emptyTheBin {
+    height: auto;
+    min-width: 70vw;
+    min-height: 30vh;
+    height: 30vh;
+  }
 }

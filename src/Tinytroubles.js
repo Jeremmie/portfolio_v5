@@ -5,7 +5,7 @@ export default `
   </div>
   <div class="text_container">
     <div class="content_container_2">
-      <h1>Tiny Troubles - 2024</h1>
+      <h1 style="white-space: break-spaces;">Tiny Troubles - 2024</h1>
       <br>
       <p>
        Project carried out with two friends during a class project. In this game, you must help save the flora and fauna under the watchful eye of an insect that is VERY concerned about the environment.<br>
