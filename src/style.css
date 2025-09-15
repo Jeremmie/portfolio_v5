@@ -80,6 +80,7 @@ section {
   justify-content: center;
   align-items: start;
   flex-direction: column;
+  margin-top: 11vh;
 }
 
 #img1 {
@@ -117,7 +118,8 @@ section {
 }
 
 #backButton {
-  font-size: small;
+  font-size: 2rem;
+  font-weight: normal;
   position: absolute;
   left: 10px;
   top: 10px;
@@ -271,6 +273,7 @@ iframe {
     padding-left: 15px;
     padding-bottom: 10vh;
     position: relative;
+
   }
 
   #projectPage {
