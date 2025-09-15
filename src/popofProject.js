@@ -1,5 +1,5 @@
 export default `
-<div style="flex-direction: column; padding: 10vh 15vw 15vh 15vw; width: auto;height: auto;" class="content_main_container_page">
+<div style="flex-direction: column;padding: 10vh 15vw 15vh 15vw;width: auto;overflow-y: scroll;" class="content_main_container_page">
   <div class="vimeo_container_landscape">
     <iframe src="https://player.vimeo.com/video/1115404697?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Popof"></iframe>
     <script src="https://player.vimeo.com/api/player.js"></script>

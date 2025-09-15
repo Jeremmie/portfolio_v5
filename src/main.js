@@ -6,6 +6,7 @@ import mdHtml from "./md.js"
 import dkHtml from "./DK.js"
 import tinyTroubleshtml from "./Tinytroubles.js"
 import natureMorteHtml from "./natureMorteHtml.js"
+import aboutMe from './aboutMe.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -30,11 +31,8 @@ document.querySelector('#app').innerHTML = `
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
       <img class="project_img" id="img6" src="./stillLife.jpg">
       <div class="project_img" id="emptyTheBin"></div>
-      <div
-        style="min-height: 70vh; min-width: 80vw; background: none;"
-        class="placeHolder"
-        id="Contact"
-      ></div>
+      <img class="project_img" id="aboutMe" src="./img/pp.jpeg">
+      
     </div>
     <div>
       <section id="title">
@@ -64,7 +62,7 @@ const titleMap = {
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
   img6: ["NATURE", "MORTE", natureMorteHtml],
   emptyTheBin: ["EMPTY", "THE BIN"],
-  Contact: ["ABOUT", "ME"],
+  aboutMe: ["ABOUT", "ME", aboutMe],
   default: ["Portfolio", "Jérémie J."],
 }
 
@@ -93,9 +91,13 @@ scrollBar.addEventListener('scroll', () => {
         <h1 class="titleLine">${line1}</h1>
         <h1 class="titleLine">${line2}</h1>
       `
-      contentPage.innerHTML = `
+      if (typeof line3 === "function") {
+        line3(contentPage)
+      } else {
+        contentPage.innerHTML = `
       ${line3}
       `
+      }
       if (key === "img3") {
         const secondLine = title.querySelectorAll(".titleLine")[1]
         function glitchLoop() {
@@ -157,9 +159,13 @@ scrollBar.addEventListener('scroll', () => {
       clickableItem.forEach(item => {
         item.addEventListener("click", function () {
           projectPage.style.right = "0vw"
-          contentPage.innerHTML = `
-          ${line3}
-          `
+          if (typeof line3 === "function") {
+            line3(contentPage)
+          } else {
+            contentPage.innerHTML = `
+            ${line3}
+            `
+          }
         })
       })
     }
