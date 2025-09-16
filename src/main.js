@@ -7,6 +7,7 @@ import dkHtml from "./DK.js"
 import tinyTroubleshtml from "./Tinytroubles.js"
 import natureMorteHtml from "./natureMorteHtml.js"
 import aboutMe from './aboutMe.js'
+import emptyTheBin from './emptyTheBin.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -61,7 +62,7 @@ const titleMap = {
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
   img6: ["NATURE", "MORTE", natureMorteHtml],
-  emptyTheBin: ["EMPTY", "THE BIN"],
+  emptyTheBin: ["EMPTY", "THE BIN", emptyTheBin],
   aboutMe: ["ABOUT", "ME", aboutMe],
   default: ["Portfolio", "Jérémie J."],
 }

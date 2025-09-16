@@ -173,7 +173,6 @@ iframe {
   display: flex;
   flex-direction: column;
   width: 40vw;
-  margin-left: 10px;
   justify-content: space-between;
   line-break: auto;
 }
@@ -229,6 +228,66 @@ iframe {
 .link_container_a {
   color: black;
   text-decoration: none;
+}
+
+.ETB_main_container {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 60px;
+}
+
+.ETB_grid_container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 25vw);
+  grid-template-rows: repeat(10, 40vh);
+  height: 100%;
+  overflow-x: scroll;
+  grid-row-gap: 0px;
+}
+
+.ETB_grid_item {
+  height: -webkit-fill-available;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.ETB_button {
+  background-color: black;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.ETB_button:hover {
+  color: black;
+  background-color: white;
+}
+
+.ETB_embbed {
+  width: 100%;
+  height: auto;
+}
+
+#gridSerif {
+  grid-column: auto / 2 span;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: fit-content;
+  gap: 20px;
+}
+
+#gridGalaxy {
+  grid-column: auto / 3 span;
+  grid-row: auto / 2 span;
+}
+
+.gridBubu {
+  background-image: url(./img/bububanks.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+  grid-row: auto / 2 span;
 }
 
 @media screen and (max-width: 500px) {
@@ -363,5 +422,40 @@ iframe {
 
   #copyEmail {
     cursor: pointer;
+  }
+
+  .ETB_grid_item {
+    height: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
+    grid-column: 2 span;
+  }
+
+  .ETB_grid_container {
+    grid-template-columns: 100vw;
+    grid-row-gap: 0px;
+  }
+
+  .ETB_embbed {
+    width: 100%;
+  }
+
+  #gridSerif {
+    grid-row: auto / 2 span;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: fit-content;
+    gap: 20px;
+  }
+
+  .gridBubu {
+    background-image: url(./img/bububanks.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+    grid-row: auto / 1 span;
+    grid-column: auto / 2 span;
+    height: -webkit-fill-available;
   }
 }
