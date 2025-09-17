@@ -1,1 +1,7 @@
-yo
+supprimer ancien dist:
+rm -rf dist
+
+git command:
+git add .
+git commit -a -m "commit" (do not need commit message either)
+git push
