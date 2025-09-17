@@ -66,7 +66,7 @@ The three months went by in a flash, but allowed me to go through every steps of
   </div>
   <h1 style="margin-top: 15px">Random shot 1 - 2023</h1>
 <p style="width: 300%; margin-top: 10px">
-  Made with::
+  Made with:
   <br>
   Blender, Marvelous designer<br><br>
   </p>
