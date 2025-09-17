@@ -113,11 +113,10 @@ scrollBar.addEventListener('scroll', () => {
         glitchLoop()
       }
       if (closestItem.classList.contains("showReel")) {
-        projectPage.style.height = "0vh"
-        projectPage.style.minHeight = "0vh"
+        projectPage.style.display = "none"
+
       } else {
-        projectPage.style.height = "fit-content"
-        projectPage.style.minHeight = "100vh"
+        projectPage.style.display = "block"
       }
     }
   } else {
@@ -282,3 +281,6 @@ loader.load('./trash.glb', (gltf) => {
 }, undefined, (error) => {
   console.error('Erreur lors du chargement du modèle :', error)
 })
+
+
+
