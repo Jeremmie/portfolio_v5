@@ -1,5 +1,4 @@
 import './style.css'
-import { setupCounter } from './counter.js'
 import popofHtml from "./popofProject.js"
 import numaHtml from "./numaProject.js"
 import mdHtml from "./md.js"
