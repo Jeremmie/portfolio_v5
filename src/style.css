@@ -367,8 +367,10 @@ iframe {
     overflow-y: scroll;
     right: 0;
     scroll-snap-align: start;
-    height: 0vh;
-    min-height: 0vh;
+    height: fit-content;
+    min-height: 100vh;
+    display: none;
+
   }
 
   #app {
