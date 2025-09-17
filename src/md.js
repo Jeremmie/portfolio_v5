@@ -12,7 +12,7 @@ export default `
   </div>
   <h1 style="margin-top: 15px">Random shot 1 - 2023</h1>
 <p style="width: 300%; margin-top: 10px">
-  Made with:
+  Made with::
   <br>
   Blender, Marvelous designer<br><br>
   </p>
