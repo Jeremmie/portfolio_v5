@@ -214,6 +214,7 @@ iframe {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 }
 
 .link_container_img {
