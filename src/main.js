@@ -284,3 +284,21 @@ loader.load('./trash.glb', (gltf) => {
 
 
 
+// check if it is read on MAC or WINDOW (solve font render engine for murmure)
+if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+  const style = document.createElement('style');
+  style.innerHTML = `
+  .titleLine::before {
+  content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + 0.56em);
+}
+
+.titleLine::after {
+  content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + 0.29em);
+}
+`;
+  document.head.appendChild(style);
+}
