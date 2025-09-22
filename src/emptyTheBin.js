@@ -1,5 +1,5 @@
 export default function emptyTheBin(container) {
-    container.innerHTML = `
+  container.innerHTML = `
     <div class="ETB_main_container">
       <div class="ETB_grid_container">
         <div class="ETB_grid_item">
