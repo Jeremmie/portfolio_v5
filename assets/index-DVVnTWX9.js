@@ -209,7 +209,7 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
       id="natureMortePicture"
     >
       <div class="epesse_h1">
-        <h1 style="white-space: nowrap;">
+        <h1 class="epesse_h1_h1">
           Epesse nouveau en fête: 2025
         </h1>
         <p>
