@@ -302,6 +302,10 @@ iframe {
   margin-right: 50px;
 }
 
+.epesse_h1_h1 {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 500px) {
   .main_container {
     max-height: 100vh;
@@ -476,5 +480,9 @@ iframe {
   #img7 {
     width: 70vw;
     height: auto;
+  }
+
+  .epesse_h1_h1 {
+    white-space: normal;
   }
 }
