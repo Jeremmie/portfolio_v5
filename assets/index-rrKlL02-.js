@@ -4077,9 +4077,9 @@ void main() {
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
       <img class="project_img" id="img3" src="./md.jpg">
+      <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
-      <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img6" src="./stillLife.jpg">
       <div class="project_img" id="emptyTheBin"></div>
       <img class="project_img" id="aboutMe" src="./img/pp.jpeg">
