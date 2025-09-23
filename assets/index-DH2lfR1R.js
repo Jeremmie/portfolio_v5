@@ -210,11 +210,11 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
     >
       <div class="epesse_h1">
         <h1 class="epesse_h1_h1">
-          Epesse nouveau en fête: 2025
+          Epesses nouveau en fête: 2025
         </h1>
         <p>
           Concours remporté pour la création de l'étiquette des bouteilles du festival
-          <a href="https://epesses-calamin.ch/fr/">Epesse nouveau en fête</a>.
+          <a href="https://epesses-calamin.ch/fr/">Epesses nouveau en fête</a>.
         </p>
       </div>
       <img src="./img/epesse_black.jpg" alt="still life picture" />
@@ -4096,7 +4096,7 @@ void main() {
     <h1 id="backButton">back</h1>
     <div id="contentPage"></div>
   </div>
-`;const ro=document.querySelector("#img_scroll_bar"),Fc=ro.querySelectorAll("img, .showReel, #Contact, #emptyTheBin"),P_=ro.querySelectorAll("img, div"),Nr=document.getElementById("title"),ji=document.getElementById("projectPage"),Fr=document.getElementById("contentPage"),Or={img1:["NUMA","SUPPLY",Dl],img2:["POPOF","??????",Il],img3:["RANDOM","SHOT 1",Ul],img4:["DIGITAL","KINGDOM",Nl],img5:["TINY","TROUBLES",Fl],img7:["EPESSE","EN FETE",zl],img6:["NATURE","MORTE",Ol],emptyTheBin:["EMPTY","THE BIN",Hl],aboutMe:["ABOUT","ME",Bl],default:["Portfolio","Jérémie J."]};var so=window.matchMedia("(max-width: 500px");ro.addEventListener("scroll",()=>{if(so.matches){let e=null,t=1/0;if(Fc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.left+i.width/2,a=Math.abs(s-window.innerWidth/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");const[i,s,a]=Or[n]||Or.default;if(Nr.innerHTML=`
+`;const ro=document.querySelector("#img_scroll_bar"),Fc=ro.querySelectorAll("img, .showReel, #Contact, #emptyTheBin"),P_=ro.querySelectorAll("img, div"),Nr=document.getElementById("title"),ji=document.getElementById("projectPage"),Fr=document.getElementById("contentPage"),Or={img1:["NUMA","SUPPLY",Dl],img2:["POPOF","??????",Il],img3:["RANDOM","SHOT 1",Ul],img4:["DIGITAL","KINGDOM",Nl],img5:["TINY","TROUBLES",Fl],img7:["EPESSES","EN FETE",zl],img6:["NATURE","MORTE",Ol],emptyTheBin:["EMPTY","THE BIN",Hl],aboutMe:["ABOUT","ME",Bl],default:["Portfolio","Jérémie J."]};var so=window.matchMedia("(max-width: 500px");ro.addEventListener("scroll",()=>{if(so.matches){let e=null,t=1/0;if(Fc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.left+i.width/2,a=Math.abs(s-window.innerWidth/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");const[i,s,a]=Or[n]||Or.default;if(Nr.innerHTML=`
         <h1 class="titleLine">${i}</h1>
         <h1 class="titleLine">${s}</h1>
       `,typeof a=="function"?a(Fr):Fr.innerHTML=`
