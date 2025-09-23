@@ -62,7 +62,7 @@ const titleMap = {
   img3: ["RANDOM", "SHOT 1", mdHtml],
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
-  img7: ["EPESSE", "EN FETE", epesse],
+  img7: ["EPESSES", "EN FETE", epesse],
   img6: ["NATURE", "MORTE", natureMorteHtml],
   emptyTheBin: ["EMPTY", "THE BIN", emptyTheBin],
   aboutMe: ["ABOUT", "ME", aboutMe],

@@ -10,11 +10,11 @@ export default `
     >
       <div class="epesse_h1">
         <h1 class="epesse_h1_h1">
-          Epesse nouveau en fête: 2025
+          Epesses nouveau en fête: 2025
         </h1>
         <p>
           Concours remporté pour la création de l'étiquette des bouteilles du festival
-          <a href="https://epesses-calamin.ch/fr/">Epesse nouveau en fête</a>.
+          <a href="https://epesses-calamin.ch/fr/">Epesses nouveau en fête</a>.
         </p>
       </div>
       <img src="./img/epesse_black.jpg" alt="still life picture" />
