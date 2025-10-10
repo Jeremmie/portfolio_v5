@@ -7,6 +7,7 @@ import tinyTroubleshtml from "./Tinytroubles.js"
 import natureMorteHtml from "./natureMorteHtml.js"
 import aboutMe from './aboutMe.js'
 import emptyTheBin from './emptyTheBin.js'
+import epesse from "./epesse.js"
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -28,6 +29,7 @@ document.querySelector('#app').innerHTML = `
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
       <img class="project_img" id="img3" src="./md.jpg">
+      <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
       <img class="project_img" id="img6" src="./stillLife.jpg">
@@ -61,6 +63,7 @@ const titleMap = {
   img3: ["RANDOM", "SHOT 1", mdHtml],
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
+  img7: ["EPESSES", "EN FETE", epesse],
   img6: ["NATURE", "MORTE", natureMorteHtml],
   emptyTheBin: ["EMPTY", "THE BIN", emptyTheBin],
   aboutMe: ["ABOUT", "ME", aboutMe],
