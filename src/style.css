@@ -59,6 +59,9 @@ section {
   object-fit: contain;
 }
 
+.project_img:hover {
+  cursor: pointer;
+}
 
 
 .placeHolder {
