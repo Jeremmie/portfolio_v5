@@ -306,6 +306,10 @@ iframe {
   white-space: nowrap;
 }
 
+#guide {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 500px) {
   .main_container {
     max-height: 100vh;
@@ -485,4 +489,46 @@ iframe {
   .epesse_h1_h1 {
     white-space: normal;
   }
+
+  #guide {
+    visibility: visible;
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    width: 100vw;
+    font-size: larger;
+    padding: 10px 0;
+    font-family: Helvetica, Arial, sans-serif;
+    top: -50%;
+    overflow: hidden;
+    /* ← IMPORTANT : masque le texte qui dépasse */
+    transition: ease-in-out 200ms;
+  }
+
+  .marquee {
+    display: block;
+    width: 100%;
+    /* ← force la largeur à 100% */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 40s linear infinite;
+  }
+
+  /* Animation de défilement */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+
 }

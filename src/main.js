@@ -14,6 +14,11 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 document.querySelector('#app').innerHTML = `
 <div></div>
   <div class="main_container">
+  <div id="guide">
+  <div class="marquee">
+      <span>scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  </span>
+    </div>
+  </div>
     <div id="img_scroll_bar">
       <div style="min-height: 50vh;" class="placeHolder"></div>
       <div class="showReel">
@@ -56,6 +61,7 @@ const clickableItem = scrollBar.querySelectorAll('img, div')
 const title = document.getElementById("title")
 const projectPage = document.getElementById('projectPage')
 const contentPage = document.getElementById('contentPage')
+const guide = document.getElementById('guide')
 
 const titleMap = {
   img1: ["NUMA", "SUPPLY", numaHtml],
@@ -309,25 +315,18 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 
 const app = document.getElementById("app");
 
-// On définit un timer de 2 secondes
+
 let scrollTimer = setTimeout(() => {
-  console.log("Aucun scroll n'a été détecté pendant 2 secondes !");
-}, 10000);
+  guide.style.top = "0px"
+  //console.log("Aucun scroll n'a été détecté pendant 5 secondes !");
+}, 15000);
 
-// On détecte le scroll
 app.onscroll = function () {
-  console.log("Scroll détecté !");
+  guide.style.top = "-50%"
+  //console.log("Scroll détecté !");
 
-  // On annule le timer dès le premier scroll
   if (scrollTimer) {
     clearTimeout(scrollTimer);
-    scrollTimer = null; // pour éviter de réutiliser ce timer
+    scrollTimer = null;
   }
 };
-
-
-function doStuff() {
-  console.log(contentPage.checkVisibility());
-  setTimeout(doStuff, 100);
-}
-setTimeout(doStuff, 100);
