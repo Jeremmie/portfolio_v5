@@ -11,6 +11,7 @@ import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 document.querySelector('#app').innerHTML = `
+<div></div>
   <div class="main_container">
     <div id="img_scroll_bar">
       <div style="min-height: 50vh;" class="placeHolder"></div>
@@ -302,3 +303,28 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 `;
   document.head.appendChild(style);
 }
+
+const app = document.getElementById("app");
+
+// On définit un timer de 2 secondes
+let scrollTimer = setTimeout(() => {
+  console.log("Aucun scroll n'a été détecté pendant 2 secondes !");
+}, 10000);
+
+// On détecte le scroll
+app.onscroll = function () {
+  console.log("Scroll détecté !");
+
+  // On annule le timer dès le premier scroll
+  if (scrollTimer) {
+    clearTimeout(scrollTimer);
+    scrollTimer = null; // pour éviter de réutiliser ce timer
+  }
+};
+
+
+function doStuff() {
+  console.log(contentPage.checkVisibility());
+  setTimeout(doStuff, 100);
+}
+setTimeout(doStuff, 100);
