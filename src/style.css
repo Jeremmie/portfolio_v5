@@ -310,15 +310,17 @@ iframe {
 }
 
 #guide {
-  visibility: hidden;
   display: none;
 }
+
+
 
 @media screen and (max-width: 500px) {
   .main_container {
     max-height: 100vh;
     position: relative;
     scroll-snap-align: start;
+    transition: ease-in-out 250ms;
   }
 
 
@@ -494,46 +496,44 @@ iframe {
     white-space: normal;
   }
 
+
   #guide {
-    visibility: visible;
-    display: inline;
     position: absolute;
     z-index: 1000;
-    background: white;
+    height: 100vh;
     width: 100vw;
-    font-size: larger;
-    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.582);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    touch-action: unset;
+    visibility: hidden;
+    opacity: 0%;
+    color: white;
+    transition: ease-in-out 500ms;
     font-family: Helvetica, Arial, sans-serif;
-    top: -50%;
-    overflow: hidden;
-    /* ← IMPORTANT : masque le texte qui dépasse */
-    transition: ease-in-out 200ms;
+    backdrop-filter: blur(3px);
   }
 
-  .marquee {
-    display: block;
-    width: 100%;
-    /* ← force la largeur à 100% */
-    overflow: hidden;
+  #guide h1 {
+    width: auto;
+    height: auto;
+    padding: 50px;
+    font-size: 1rem;
     white-space: nowrap;
   }
 
-  .marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 40s linear infinite;
+  #guide p {
+    border: solid 2px white;
+    padding: 10px 15px 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
   }
 
-  /* Animation de défilement */
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
+  #guide p:hover {
+    color: black;
+    background: white;
+    transition: ease-in-out 250ms;
   }
-
-
 }

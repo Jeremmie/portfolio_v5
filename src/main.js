@@ -12,13 +12,12 @@ import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 document.querySelector('#app').innerHTML = `
-<div></div>
-  <div class="main_container">
-  <div id="guide">
-  <div class="marquee">
-      <span>scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  scroll down or click on any project to see more  -  </span>
-    </div>
-  </div>
+<div class="main_container">
+<div id="guide">
+<h1>scroll down or click anywhere to see projects</h1>
+<p>got it!</p>
+</div>
+  
     <div id="img_scroll_bar">
       <div style="min-height: 50vh;" class="placeHolder"></div>
       <div class="showReel">
@@ -62,6 +61,9 @@ const title = document.getElementById("title")
 const projectPage = document.getElementById('projectPage')
 const contentPage = document.getElementById('contentPage')
 const guide = document.getElementById('guide')
+const mainContainer = document.querySelector(".main_container")
+console.log(mainContainer);
+
 
 const titleMap = {
   img1: ["NUMA", "SUPPLY", numaHtml],
@@ -317,12 +319,13 @@ const app = document.getElementById("app");
 
 
 let scrollTimer = setTimeout(() => {
-  guide.style.top = "0px"
+  guide.style.visibility = "visible"
+  guide.style.opacity = "100%"
   //console.log("Aucun scroll n'a été détecté pendant 5 secondes !");
 }, 15000);
 
 app.onscroll = function () {
-  guide.style.top = "-50%"
+
   //console.log("Scroll détecté !");
 
   if (scrollTimer) {
@@ -330,3 +333,9 @@ app.onscroll = function () {
     scrollTimer = null;
   }
 };
+
+guide.addEventListener("click", function () {
+  guide.style.opacity = "0%"
+  guide.style.visibility = "hidden"
+
+})
