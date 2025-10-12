@@ -311,6 +311,7 @@ iframe {
 
 #guide {
   visibility: hidden;
+  display: none;
 }
 
 @media screen and (max-width: 500px) {
@@ -495,6 +496,7 @@ iframe {
 
   #guide {
     visibility: visible;
+    display: inline;
     position: absolute;
     z-index: 1000;
     background: white;
