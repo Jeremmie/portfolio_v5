@@ -4123,4 +4123,4 @@ void main() {
 	display: table;
 	margin-bottom: calc(-0.5lh + 0.29em);
 }
-`,document.head.appendChild(r)}const H_=document.getElementById("app");let Gs=setTimeout(()=>{Ki.style.visibility="visible",Ki.style.opacity="100%"},15e3);H_.onscroll=function(){Gs&&(clearTimeout(Gs),Gs=null)};Ki.addEventListener("click",function(){Ki.style.opacity="0%",Ki.style.visibility="hidden"});
+`,document.head.appendChild(r)}const H_=document.getElementById("app");let Gs=setTimeout(()=>{Ki.style.visibility="visible",Ki.style.opacity="100%"},2e4);H_.onscroll=function(){Gs&&(clearTimeout(Gs),Gs=null)};Ki.addEventListener("click",function(){Ki.style.opacity="0%",Ki.style.visibility="hidden"});
