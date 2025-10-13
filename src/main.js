@@ -322,7 +322,7 @@ let scrollTimer = setTimeout(() => {
   guide.style.visibility = "visible"
   guide.style.opacity = "100%"
   //console.log("Aucun scroll n'a été détecté pendant 5 secondes !");
-}, 15000);
+}, 20000);
 
 app.onscroll = function () {
 
