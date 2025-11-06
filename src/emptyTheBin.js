@@ -63,3 +63,4 @@ export default function emptyTheBin(container) {
 
 
 }
+TODO: "changer png to jpg"

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 .titleLine {
@@ -313,7 +314,10 @@ iframe {
   display: none;
 }
 
-
+#img0 {
+  height: 55vh;
+  border: solid #e7e7e7 2px;
+}
 
 @media screen and (max-width: 500px) {
   .main_container {
@@ -535,5 +539,114 @@ iframe {
     color: black;
     background: white;
     transition: ease-in-out 250ms;
+  }
+
+  #img0 {
+    height: auto;
+    width: 77vw;
+  }
+}
+
+/* Pas Ta Tarte */
+.ptt_main {
+  max-height: fit-content;
+  padding-top: 15vh;
+  overflow-y: scroll;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.PTT_img_container {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ptt_img {
+  width: 74vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ptt_first_row {
+  width: 50%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ptt_second_row {
+  width: -webkit-fill-available;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ptt_img_1 {
+  background-image: url(./img/pas-ta-tarte/7.png);
+}
+
+.ptt_img_2 {
+  background-image: url(./img/pas-ta-tarte/5.jpg);
+}
+
+.ptt_img_3 {
+  background-image: url(./img/pas-ta-tarte/4.jpg);
+}
+
+.ptt_img_4 {
+  background-image: url(./img/pas-ta-tarte/6.gif);
+}
+
+.ptt_img_5 {
+  background-image: url(./img/pas-ta-tarte/1.jpg);
+}
+
+.ptt_text {
+  width: 74vw;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
+  padding-bottom: 50px;
+}
+
+.ptt_text a {
+  color: black;
+}
+
+@media screen and (max-width: 500px) {
+  .PTT_img_container {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .ptt_img {
+    flex-direction: column;
+  }
+
+  .ptt_first_row {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
