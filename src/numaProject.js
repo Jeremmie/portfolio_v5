@@ -3,7 +3,9 @@ export default `
   <div class="vimeo_container">
   <iframe src="https://player.vimeo.com/video/1114843214?badge=0&loop=1&amp&autoplay=1&muted=1&;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Numa Supply"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
   </div>
-  <div class="text_container">
+  <div class="text_container" style="
+    margin-left: 15px;
+">
   <div class="content_container_2">
   <h1>Numa Supply - 2025</h1>
   <p>

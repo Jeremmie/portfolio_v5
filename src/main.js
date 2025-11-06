@@ -8,6 +8,7 @@ import natureMorteHtml from "./natureMorteHtml.js"
 import aboutMe from './aboutMe.js'
 import emptyTheBin from './emptyTheBin.js'
 import epesse from "./epesse.js"
+import pasTaTarte from './pasTaTarte.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -30,6 +31,7 @@ document.querySelector('#app').innerHTML = `
         ></iframe>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
+      <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
       <img class="project_img" id="img3" src="./md.jpg">
@@ -66,6 +68,7 @@ console.log(mainContainer);
 
 
 const titleMap = {
+  img0: ["48H FILM", "PROJECT", pasTaTarte],
   img1: ["NUMA", "SUPPLY", numaHtml],
   img2: ["POPOF", "??????", popofHtml],
   img3: ["RANDOM", "SHOT 1", mdHtml],
