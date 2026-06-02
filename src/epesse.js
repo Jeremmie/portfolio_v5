@@ -1,10 +1,10 @@
 export default `
   <div
-    style="padding: 15vh 15vw 15vh 15vw; justify-content: center; position: absolute; overflow-x: scroll;"
+    style="padding: 15dvh 15dvw 15dvh 15dvw; justify-content: center; position: absolute; overflow-x: scroll;"
     class="content_main_container_page"
   >
     <div
-      style="left: 15vw; position: absolute;"
+      style="left: 15dvw; position: absolute;"
       class="img_container_global"
       id="natureMortePicture"
     >

@@ -1,5 +1,5 @@
 export default `
-<div style="flex-direction: column;padding: 10vh 15vw 15vh 15vw;width: auto;overflow-y: scroll;" class="content_main_container_page">
+<div style="flex-direction: column;padding: 10dvh 15dvw 15dvh 15dvw;width: auto;overflow-y: scroll;" class="content_main_container_page">
   <div class="vimeo_container_landscape">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/yf8iQaCDs_U?si=oLHAlNOQxjwi1Hmu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>

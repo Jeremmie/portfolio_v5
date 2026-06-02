@@ -1,8 +1,8 @@
 export default `
-<div style="padding: 15vh 15vw 15vh 15vw;
+<div style="padding: 15dvh 15dvw 15dvh 15dvw;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   flex-direction: column;
   justify-content: center;
   align-items: start;" class="content_main_container_page">

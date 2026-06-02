@@ -8,7 +8,7 @@
 .titleLine {
   white-space: nowrap;
   display: flow-root;
-  font-size: 60vh;
+  font-size: 60dvh;
 }
 
 .titleLine::before {
@@ -29,34 +29,34 @@
 }
 
 .main_container {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100svh;
   position: fixed;
 }
 
 section {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   font-family: leMurmure;
 }
 
 #img_scroll_bar {
-  height: 100vh;
-  width: 100vw;
+  height: 100svh;
+  width: 100dvw;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: end;
   overflow-y: auto;
-  /* padding: 90vh 5vw 90vh 0; */
-  /* padding: 0 5vw 0 0; */
-  right: 0vw;
-  transition: ease-in 500ms;
+  /* padding: 90dvh 5dvw 90dvh 0; */
+  /* padding: 0 5dvw 0 0; */
+  right: 0dvw;
+  transition: right 500ms ease-in;
 }
 
 .project_img {
   width: auto;
-  height: 70vh;
+  height: 70dvh;
   object-fit: contain;
 }
 
@@ -67,18 +67,18 @@ section {
 
 .placeHolder {
   width: 10px;
-  min-height: 70vh;
+  min-height: 70dvh;
   object-fit: contain;
 }
 
 
 #title {
   background-color: rgb(255, 255, 255);
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100svh;
   position: absolute;
-  right: 0vw;
-  transition: ease-in 600ms;
+  right: 0dvw;
+  transition: right 600ms ease-in;
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -92,7 +92,7 @@ section {
 }
 
 .showReel {
-  min-height: 40vh;
+  min-height: 40dvh;
   width: auto;
   aspect-ratio: 16/9;
 }
@@ -103,25 +103,25 @@ section {
 }
 
 #img2 {
-  height: 42vh;
+  height: 42dvh;
 }
 
 #img5 {
-  height: 50vh;
+  height: 50dvh;
 }
 
 #img7 {
-  height: 60vh;
+  height: 60dvh;
 }
 
 #projectPage {
-  width: 100vw;
+  width: 100dvw;
   height: fit-content;
-  min-height: 100vh;
+  min-height: 100svh;
   position: fixed;
-  right: -100vw;
+  right: -100dvw;
   z-index: 10;
-  transition: ease-in, 200ms;
+  transition: right 200ms ease-in;
   background-color: white;
 }
 
@@ -159,7 +159,7 @@ section {
 
 .vimeo_container_landscape,
 iframe {
-  width: 70vw;
+  width: 70dvw;
   height: 100%;
 }
 
@@ -170,8 +170,8 @@ iframe {
 
 .content_main_container_page {
   width: 100%;
-  height: 100vh;
-  padding: 15vh 0 15vh 15vw;
+  height: 100dvh;
+  padding: 15dvh 0 15dvh 15dvw;
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: row;
@@ -180,7 +180,7 @@ iframe {
 .text_container {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 40dvw;
   justify-content: space-between;
   line-break: auto;
 }
@@ -196,22 +196,22 @@ iframe {
 }
 
 .content_main_container_page img {
-  height: 70vh;
+  height: 70dvh;
 }
 
 #natureMortePicture img {
-  height: 70vh;
+  height: 70dvh;
 }
 
 #emptyTheBin {
-  min-height: 70vh;
-  width: 30vw;
+  min-height: 70dvh;
+  width: 30dvw;
 }
 
 .aboutMe_main_container {
   width: 100%;
-  height: 100vh;
-  padding: 15vh 15vw 15vh 15vw;
+  height: 100dvh;
+  padding: 15dvh 15dvw 15dvh 15dvw;
   font-family: Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -226,7 +226,7 @@ iframe {
 }
 
 .link_container_img {
-  width: 10vw;
+  width: 10dvw;
   margin-right: 20px;
 }
 
@@ -240,16 +240,16 @@ iframe {
 }
 
 .ETB_main_container {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   margin-top: 60px;
 }
 
 .ETB_grid_container {
-  width: 100vw;
+  width: 100dvw;
   display: grid;
-  grid-template-columns: repeat(4, 25vw);
-  grid-template-rows: repeat(10, 40vh);
+  grid-template-columns: repeat(4, 25dvw);
+  grid-template-rows: repeat(10, 40dvh);
   height: 100%;
   overflow-x: scroll;
   grid-row-gap: 0px;
@@ -315,16 +315,16 @@ iframe {
 }
 
 #img0 {
-  height: 55vh;
+  height: 55dvh;
   border: solid #e7e7e7 2px;
 }
 
 @media screen and (max-width: 500px) {
   .main_container {
-    max-height: 100vh;
+    max-height: 100svh;
     position: relative;
     scroll-snap-align: start;
-    transition: ease-in-out 250ms;
+    transition: right 250ms ease-in-out;
   }
 
 
@@ -335,12 +335,12 @@ iframe {
   }
 
   #img3 {
-    width: 50vw
+    width: 50dvw
   }
 
   #img2,
   #img5 {
-    width: 90vw;
+    width: 90dvw;
     height: auto;
   }
 
@@ -356,14 +356,14 @@ iframe {
   }
 
   .project_img {
-    width: 60vw;
+    width: 60dvw;
     height: auto;
     object-fit: contain;
   }
 
   .showReel {
     min-height: fit-content;
-    min-width: 90vw;
+    min-width: 90dvw;
     aspect-ratio: 16/9;
     background-color: black;
   }
@@ -378,16 +378,16 @@ iframe {
   .titleLine {
     white-space: nowrap;
     display: flow-root;
-    font-size: 30vw;
+    font-size: 30dvw;
   }
 
 
   #title {
     justify-content: end;
-    height: 100vh;
+    height: 100svh;
     border: none;
     padding-left: 15px;
-    padding-bottom: 10vh;
+    padding-bottom: 0dvh;
     position: relative;
 
   }
@@ -398,14 +398,14 @@ iframe {
     right: 0;
     scroll-snap-align: start;
     height: fit-content;
-    min-height: 100vh;
+    min-height: 100svh;
     display: none;
 
   }
 
   #app {
-    scroll-snap-type: y mandatory;
-    height: 100vh;
+    scroll-snap-type: y proximity;
+    height: 100svh;
     overflow-y: scroll;
     scroll-behavior: smooth;
   }
@@ -416,7 +416,7 @@ iframe {
 
   .content_main_container_page {
     flex-direction: column;
-    padding: 10vh 15vw 15vh 15vw;
+    padding: 10dvh 15dvw 15dvh 15dvw;
     height: 100%;
   }
 
@@ -426,24 +426,24 @@ iframe {
   }
 
   #natureMortePicture img {
-    height: 50vh;
+    height: 50dvh;
   }
 
   #emptyTheBin {
     height: auto;
-    min-width: 70vw;
-    min-height: 30vh;
-    height: 30vh;
+    min-width: 70dvw;
+    min-height: 30dvh;
+    height: 30dvh;
   }
 
   #aboutMe {
-    width: 60vw;
+    width: 60dvw;
   }
 
   .aboutMe_main_container {
     width: 100%;
-    height: 100vh;
-    padding: 15vh 5vw 15vh 5vw;
+    height: 100dvh;
+    padding: 15dvh 5dvw 15dvh 5dvw;
     font-family: Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -464,7 +464,7 @@ iframe {
   }
 
   .ETB_grid_container {
-    grid-template-columns: 100vw;
+    grid-template-columns: 100dvw;
     grid-row-gap: 0px;
   }
 
@@ -492,7 +492,7 @@ iframe {
   }
 
   #img7 {
-    width: 70vw;
+    width: 70dvw;
     height: auto;
   }
 
@@ -504,8 +504,8 @@ iframe {
   #guide {
     position: absolute;
     z-index: 1000;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     background: rgba(0, 0, 0, 0.582);
     display: flex;
     flex-direction: column;
@@ -543,23 +543,23 @@ iframe {
 
   #img0 {
     height: auto;
-    width: 77vw;
+    width: 77dvw;
   }
 }
 
 /* Pas Ta Tarte */
 .ptt_main {
   max-height: fit-content;
-  padding-top: 15vh;
+  padding-top: 15dvh;
   overflow-y: scroll;
-  height: 100vh;
+  height: 100dvh;
   overflow-x: hidden;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 .PTT_img_container {
   display: flex;
-  width: 100vw;
+  width: 100dvw;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -567,7 +567,7 @@ iframe {
 }
 
 .ptt_img {
-  width: 74vw;
+  width: 74dvw;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -614,7 +614,7 @@ iframe {
 }
 
 .ptt_text {
-  width: 74vw;
+  width: 74dvw;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -630,7 +630,7 @@ iframe {
 @media screen and (max-width: 500px) {
   .PTT_img_container {
     display: flex;
-    width: 100vw;
+    width: 100dvw;
     height: 100%;
     align-items: center;
     justify-content: start;

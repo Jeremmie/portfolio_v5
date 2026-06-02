@@ -15,12 +15,12 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 document.querySelector('#app').innerHTML = `
 <div class="main_container">
 <div id="guide">
-<h1>scroll down or click anywhere to see projects</h1>
+<h1 id="guideText">scroll down or click anywhere to see projects</h1>
 <p>got it!</p>
 </div>
-  
+
     <div id="img_scroll_bar">
-      <div style="min-height: 50vh;" class="placeHolder"></div>
+      <div style="min-height: 50dvh;" class="placeHolder"></div>
       <div class="showReel">
         <iframe
           src="https://player.vimeo.com/video/930275465?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -81,7 +81,8 @@ const titleMap = {
   default: ["Portfolio", "Jérémie J."],
 }
 
-var x = window.matchMedia("(max-width: 500px")
+var x = window.matchMedia("(max-width: 500px)")
+let userHasScrolled = false
 
 scrollBar.addEventListener('scroll', () => {
   if (x.matches) {
@@ -172,7 +173,7 @@ scrollBar.addEventListener('scroll', () => {
       }
       clickableItem.forEach(item => {
         item.addEventListener("click", function () {
-          projectPage.style.right = "0vw"
+          projectPage.style.right = "0dvw"
           if (typeof line3 === "function") {
             line3(contentPage)
           } else {
@@ -193,7 +194,7 @@ if (x.matches) {
 }
 
 document.getElementById("backButton").addEventListener("click", function () {
-  projectPage.style.right = "-100vw"
+  projectPage.style.right = "-100dvw"
 })
 
 const words = ["_", "Open_", "Open to_", "Open to work_", "Open to work :)_"]
@@ -320,17 +321,79 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 
 const app = document.getElementById("app");
 
+if (x.matches) {
+  document.getElementById("guideText").textContent = "swipe sideways to browse projects"
+}
+
+function easeInOutQuad(t) {
+  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
+}
+
+function fakeScrollHint() {
+  if (userHasScrolled) return
+  const bar = document.getElementById("img_scroll_bar")
+  const axis = x.matches ? "scrollLeft" : "scrollTop" // mobile = horizontal, desktop = vertical
+  const peekDistance = 130
+  const outDuration = 700
+  const backDuration = 600
+  const pauseBetween = 900
+  const maxCycles = 3
+  let cycle = 0
+  let start = null
+
+  function animateOut(timestamp) {
+    if (userHasScrolled) return
+    if (!start) start = timestamp
+    const progress = Math.min((timestamp - start) / outDuration, 1)
+    bar[axis] = peekDistance * easeInOutQuad(progress)
+    if (progress < 1) {
+      requestAnimationFrame(animateOut)
+    } else {
+      start = null
+      requestAnimationFrame(animateBack)
+    }
+  }
+
+  function animateBack(timestamp) {
+    if (userHasScrolled) return
+    if (!start) start = timestamp
+    const progress = Math.min((timestamp - start) / backDuration, 1)
+    bar[axis] = peekDistance * (1 - easeInOutQuad(progress))
+    if (progress < 1) {
+      requestAnimationFrame(animateBack)
+    } else {
+      cycle++
+      if (cycle < maxCycles && !userHasScrolled) {
+        start = null
+        setTimeout(() => requestAnimationFrame(animateOut), pauseBetween)
+      }
+    }
+  }
+
+  requestAnimationFrame(animateOut)
+}
+
+setTimeout(fakeScrollHint, 1500);
 
 let scrollTimer = setTimeout(() => {
   guide.style.visibility = "visible"
   guide.style.opacity = "100%"
-  //console.log("Aucun scroll n'a été détecté pendant 5 secondes !");
-}, 15000);
+}, 7000);
+
+// A genuine user gesture cancels both the scroll hint and the guide panel timer.
+// (We can't rely on scroll events: the hint scrolls programmatically, and the
+// mobile horizontal scroll doesn't bubble to #app.)
+["touchstart", "pointerdown", "wheel", "keydown"].forEach((evt) => {
+  window.addEventListener(evt, () => {
+    userHasScrolled = true
+    if (scrollTimer) {
+      clearTimeout(scrollTimer)
+      scrollTimer = null
+    }
+  }, { passive: true, once: true })
+})
 
 app.onscroll = function () {
-
-  //console.log("Scroll détecté !");
-
   if (scrollTimer) {
     clearTimeout(scrollTimer);
     scrollTimer = null;
@@ -340,5 +403,4 @@ app.onscroll = function () {
 guide.addEventListener("click", function () {
   guide.style.opacity = "0%"
   guide.style.visibility = "hidden"
-
 })
