@@ -310,7 +310,7 @@ iframe {
   white-space: nowrap;
 }
 
-#guide {
+#scrollHint {
   display: none;
 }
 
@@ -320,11 +320,43 @@ iframe {
 }
 
 @media screen and (max-width: 500px) {
+  #scrollHint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 44px;
+    z-index: 1000;
+    text-align: center;
+    color: black;
+    background: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    transform: translateY(100%);
+    transition: transform 400ms ease-in-out;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  /* The banner sliding up and the content nudge are split into two classes so the
+     nudge can stay static during the actual scroll (fluid); only the banner
+     slides away on scroll. */
+  #app.hint-bar #scrollHint {
+    transform: translateY(0);
+  }
+
+  #app.hint-nudge .main_container {
+    transform: translateY(-44px);
+  }
+
   .main_container {
     max-height: 100svh;
     position: relative;
     scroll-snap-align: start;
-    transition: right 250ms ease-in-out;
+    transition: right 250ms ease-in-out, transform 400ms ease-in-out;
   }
 
 
@@ -500,46 +532,6 @@ iframe {
     white-space: normal;
   }
 
-
-  #guide {
-    position: absolute;
-    z-index: 1000;
-    height: 100dvh;
-    width: 100dvw;
-    background: rgba(0, 0, 0, 0.582);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    touch-action: unset;
-    visibility: hidden;
-    opacity: 0%;
-    color: white;
-    transition: ease-in-out 500ms;
-    font-family: Helvetica, Arial, sans-serif;
-    backdrop-filter: blur(3px);
-  }
-
-  #guide h1 {
-    width: auto;
-    height: auto;
-    padding: 50px;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-  #guide p {
-    border: solid 2px white;
-    padding: 10px 15px 10px 15px;
-    font-size: 0.9rem;
-    border-radius: 5px;
-  }
-
-  #guide p:hover {
-    color: black;
-    background: white;
-    transition: ease-in-out 250ms;
-  }
 
   #img0 {
     height: auto;

@@ -14,11 +14,6 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
 document.querySelector('#app').innerHTML = `
 <div class="main_container">
-<div id="guide">
-<h1 id="guideText">scroll down or click anywhere to see projects</h1>
-<p>got it!</p>
-</div>
-
     <div id="img_scroll_bar">
       <div style="min-height: 50dvh;" class="placeHolder"></div>
       <div class="showReel">
@@ -54,6 +49,7 @@ document.querySelector('#app').innerHTML = `
     <h1 id="backButton">back</h1>
     <div id="contentPage"></div>
   </div>
+  <div id="scrollHint">scroll down to see more</div>
 `
 
 const scrollBar = document.querySelector('#img_scroll_bar')
@@ -62,7 +58,6 @@ const clickableItem = scrollBar.querySelectorAll('img, div')
 const title = document.getElementById("title")
 const projectPage = document.getElementById('projectPage')
 const contentPage = document.getElementById('contentPage')
-const guide = document.getElementById('guide')
 const mainContainer = document.querySelector(".main_container")
 console.log(mainContainer);
 
@@ -83,6 +78,11 @@ const titleMap = {
 
 var x = window.matchMedia("(max-width: 500px)")
 let userHasScrolled = false
+
+// "scroll down" banner state (mobile): shown when settled on a project, hidden
+// for good once the user actually scrolls down.
+let verticalScrollDone = false
+let settleTimer = null
 
 scrollBar.addEventListener('scroll', () => {
   if (x.matches) {
@@ -130,10 +130,21 @@ scrollBar.addEventListener('scroll', () => {
       }
       if (closestItem.classList.contains("showReel")) {
         projectPage.style.display = "none"
-
+        app.classList.remove("hint-bar", "hint-nudge")
       } else {
         projectPage.style.display = "block"
       }
+    }
+
+    // Once the user has genuinely browsed and settles on a real project (at the
+    // top of #app), slide the "scroll down" banner up and nudge the page with it.
+    if (userHasScrolled && !verticalScrollDone) {
+      clearTimeout(settleTimer)
+      settleTimer = setTimeout(() => {
+        if (projectPage.style.display !== "none" && app.scrollTop < 20) {
+          app.classList.add("hint-bar", "hint-nudge")
+        }
+      }, 500)
     }
   } else {
     let closestItem = null
@@ -321,10 +332,6 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 
 const app = document.getElementById("app");
 
-if (x.matches) {
-  document.getElementById("guideText").textContent = "swipe sideways to browse projects"
-}
-
 function easeInOutQuad(t) {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
 }
@@ -375,32 +382,21 @@ function fakeScrollHint() {
 
 setTimeout(fakeScrollHint, 1500);
 
-let scrollTimer = setTimeout(() => {
-  guide.style.visibility = "visible"
-  guide.style.opacity = "100%"
-}, 7000);
-
-// A genuine user gesture cancels both the scroll hint and the guide panel timer.
-// (We can't rely on scroll events: the hint scrolls programmatically, and the
-// mobile horizontal scroll doesn't bubble to #app.)
+// A genuine user gesture cancels the scroll hint. (We can't rely on scroll
+// events: the hint scrolls programmatically.)
 ["touchstart", "pointerdown", "wheel", "keydown"].forEach((evt) => {
-  window.addEventListener(evt, () => {
-    userHasScrolled = true
-    if (scrollTimer) {
-      clearTimeout(scrollTimer)
-      scrollTimer = null
-    }
-  }, { passive: true, once: true })
+  window.addEventListener(evt, () => { userHasScrolled = true }, { passive: true, once: true })
 })
 
-app.onscroll = function () {
-  if (scrollTimer) {
-    clearTimeout(scrollTimer);
-    scrollTimer = null;
+// As the user scrolls down into a project, slide the banner away but keep the
+// content nudge static (so the scroll stays fluid); reset the nudge only once
+// they're back at the top, at rest. After the first scroll-down it's done.
+app.addEventListener("scroll", () => {
+  if (app.scrollTop > 20) {
+    verticalScrollDone = true
+    clearTimeout(settleTimer)
+    app.classList.remove("hint-bar")
+  } else if (verticalScrollDone) {
+    app.classList.remove("hint-nudge")
   }
-};
-
-guide.addEventListener("click", function () {
-  guide.style.opacity = "0%"
-  guide.style.visibility = "hidden"
 })
