@@ -199,6 +199,28 @@ iframe {
   height: 70dvh;
 }
 
+.alerte_soiree_page {
+  gap: 15px;
+}
+
+.alerte_soiree_page .text_container {
+  margin-left: 15px;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.alerte_soiree_page .text_container h1 {
+  white-space: normal;
+  font-size: clamp(1rem, 2dvw, 1.6rem);
+  line-height: 1.2;
+}
+
+.alerte_soiree_page .text_container p {
+  font-size: clamp(0.75rem, 1.1dvw, 1rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
 #natureMortePicture img {
   height: 70dvh;
 }
@@ -457,6 +479,36 @@ iframe {
     width: 100%;
   }
 
+  .alerte_soiree_page {
+    height: auto;
+    gap: 15px;
+  }
+
+  .alerte_soiree_page .vimeo_container {
+    width: 100%;
+    height: auto;
+  }
+
+  .alerte_soiree_page .text_container {
+    margin-left: 0;
+  }
+
+  .alerte_soiree_page .text_container h1 {
+    font-size: clamp(1rem, 5dvw, 1.4rem);
+  }
+
+  .alerte_soiree_page .text_container p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .alerte_soiree_page .text_container p br {
+    display: block;
+    content: "";
+    margin-top: 6px;
+  }
+
   #natureMortePicture img {
     height: 50dvh;
   }
@@ -641,4 +693,37 @@ iframe {
     background-position: center;
     background-repeat: no-repeat;
   }
+}
+
+#title,
+#projectPage {
+  transition: background-color 600ms ease, color 600ms ease;
+}
+
+.titleLine,
+#projectPage a,
+#backButton {
+  transition: color 600ms ease;
+}
+
+html.theme-alerte #title {
+  background-color: #000;
+  justify-content: flex-end;
+}
+
+html.theme-alerte #title .titleLine {
+  color: #ff0000;
+}
+
+html.theme-alerte #projectPage {
+  background-color: #000;
+  color: #ff0000;
+}
+
+html.theme-alerte #projectPage a {
+  color: #ff0000;
+}
+
+html.theme-alerte #backButton {
+  color: #ff0000;
 }

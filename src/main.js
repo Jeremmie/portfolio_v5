@@ -4,11 +4,12 @@ import numaHtml from "./numaProject.js"
 import mdHtml from "./md.js"
 import dkHtml from "./DK.js"
 import tinyTroubleshtml from "./Tinytroubles.js"
-import natureMorteHtml from "./natureMorteHtml.js"
+// import natureMorteHtml from "./natureMorteHtml.js"  // archived
 import aboutMe from './aboutMe.js'
 import emptyTheBin from './emptyTheBin.js'
 import epesse from "./epesse.js"
 import pasTaTarte from './pasTaTarte.js'
+import alerteSoiree from './alerteSoiree.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -26,6 +27,7 @@ document.querySelector('#app').innerHTML = `
         ></iframe>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
+      <img class="project_img" id="img8" src="./img/alerte_soiree.jpeg">
       <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
@@ -33,7 +35,8 @@ document.querySelector('#app').innerHTML = `
       <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
-      <img class="project_img" id="img6" src="./stillLife.jpg">
+      <!-- <img class="project_img" id="img6" src="./stillLife.jpg"> archived -->
+
       <div class="project_img" id="emptyTheBin"></div>
       <img class="project_img" id="aboutMe" src="./img/pp.jpeg">
       
@@ -63,6 +66,7 @@ console.log(mainContainer);
 
 
 const titleMap = {
+  img8: ["2221", "", alerteSoiree],
   img0: ["48H FILM", "PROJECT", pasTaTarte],
   img1: ["NUMA", "SUPPLY", numaHtml],
   img2: ["POPOF", "??????", popofHtml],
@@ -70,7 +74,7 @@ const titleMap = {
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
   img7: ["EPESSES", "EN FETE", epesse],
-  img6: ["NATURE", "MORTE", natureMorteHtml],
+  // img6: ["NATURE", "MORTE", natureMorteHtml],  // archived
   emptyTheBin: ["EMPTY", "THE BIN", emptyTheBin],
   aboutMe: ["ABOUT", "ME", aboutMe],
   default: ["Portfolio", "Jérémie J."],
@@ -102,6 +106,7 @@ scrollBar.addEventListener('scroll', () => {
     if (closestItem) {
       let key = closestItem.id ||
         (closestItem.classList.contains("showReel") ? "showReel" : "default")
+      document.documentElement.classList.toggle('theme-alerte', key === 'img8')
       const [line1, line2, line3] = titleMap[key] || titleMap.default
       title.innerHTML = `
         <h1 class="titleLine">${line1}</h1>
@@ -163,6 +168,7 @@ scrollBar.addEventListener('scroll', () => {
     if (closestItem) {
       let key = closestItem.id ||
         (closestItem.classList.contains("showReel") ? "showReel" : "default")
+      document.documentElement.classList.toggle('theme-alerte', key === 'img8')
       const [line1, line2, line3] = titleMap[key] || titleMap.default
       title.innerHTML = `
         <h1 class="titleLine">${line1}</h1>

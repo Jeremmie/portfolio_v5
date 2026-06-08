@@ -17,10 +17,10 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
       <p>
         Made with:
         <br>
-        Clay, hand draw, Premier Pro, Blender, Spline, After Effect  <br><br>
+        Clay, hand draw, Premiere Pro, Blender, Spline, After Effects  <br><br>
       </p>
       <p>
-        Crédits: <br>
+        Credits: <br>
          <a href="https://www.youtube.com/watch?v=US4fDXW7-ys">Insomnia, Yellow Magic Orchestra</a>
       </p>
     </div>

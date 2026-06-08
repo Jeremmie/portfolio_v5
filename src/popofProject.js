@@ -18,10 +18,10 @@ The three months went by in a flash, but allowed me to go through every steps of
       <p>
         Made with:
         <br>
-        Blender, After Effect, Premier Pro, Substance Painter, Rokoko  <br><br>
+        Blender, After Effects, Premiere Pro, Substance Painter, Rokoko  <br><br>
       </p>
       <p>
-        Crédits: <br>
+        Credits: <br>
         <p>Music made by: <a href="https://linktr.ee/ryslo">Ryslo</a><p>
       </p>
     </div>
