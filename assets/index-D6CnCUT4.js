@@ -18,10 +18,10 @@ The three months went by in a flash, but allowed me to go through every steps of
       <p>
         Made with:
         <br>
-        Blender, After Effect, Premier Pro, Substance Painter, Rokoko  <br><br>
+        Blender, After Effects, Premiere Pro, Substance Painter, Rokoko  <br><br>
       </p>
       <p>
-        Crédits: <br>
+        Credits: <br>
         <p>Music made by: <a href="https://linktr.ee/ryslo">Ryslo</a><p>
       </p>
     </div>
@@ -38,16 +38,16 @@ The three months went by in a flash, but allowed me to go through every steps of
   <div class="content_container_2">
   <h1>Numa Supply - 2025</h1>
   <p>
-  Projet réalisé pour l’ouverture <br> du magasin de  <a href="https://www.instagram.com/reel/DNu_rTWUN85/?utm_source=ig_web_copy_link&igsh=Ym8zMmJ2YzRhanRv">Numa Supply</a>.
+  A project made for the opening of the <a href="https://www.instagram.com/reel/DNu_rTWUN85/?utm_source=ig_web_copy_link&igsh=Ym8zMmJ2YzRhanRv">Numa Supply</a> store.
   </p>
   </div>
   <div style="margin-top: 50px;">
   <p>
   Made with:
   <br>
-  Blender, Marvelous designer, After Effect, Davinci Resolve, Substance Painter<br><br>
+  Blender, Marvelous Designer, After Effects, Davinci Resolve, Substance Painter<br><br>
   </p>
-  <p>Crédits: <br>
+  <p>Credits: <br>
   <a href="https://www.youtube.com/watch?v=2L6_riU92yU">Junglist, Congo Natty</a>
   </p>
 </div>
@@ -83,7 +83,7 @@ The three months went by in a flash, but allowed me to go through every steps of
 <h1 style="padding: 10px 0 30px 0;">Internship at Digital Kingdom - 2023</h1>
 <p>
 I created this interactive 3D website to summarize my internship at the video game studio Digital Kingdom.<br><br>
-You can find it here <a href="https://jeremmie.github.io/rapport_de_stage_main/dist/index.html">ici</a></p>
+You can find it <a href="https://jeremmie.github.io/rapport_de_stage_main/dist/index.html">here</a>.</p>
 </div>
 `,zl=`
 <div style="flex-direction: column; padding: 10dvh 15dvw 15dvh 15dvw; width: auto;height: auto;" class="content_main_container_page">
@@ -104,25 +104,16 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
       <p>
         Made with:
         <br>
-        Clay, hand draw, Premier Pro, Blender, Spline, After Effect  <br><br>
+        Clay, hand draw, Premiere Pro, Blender, Spline, After Effects  <br><br>
       </p>
       <p>
-        Crédits: <br>
+        Credits: <br>
          <a href="https://www.youtube.com/watch?v=US4fDXW7-ys">Insomnia, Yellow Magic Orchestra</a>
       </p>
     </div>
   </div>
 </div>
-`,Vl=`
-<div style="padding: 15dvh 15dvw 15dvh 15dvw;justify-content: center;position: absolute;overflow-x: scroll;" class="content_main_container_page">
-  <div style="left: 15dvw;position: absolute;" class="img_container_global" id="natureMortePicture">
-    <img src="./img/STILL_LIFE2.jpg" alt="still life picture" />
-    <img src="./img/STILL_LIFE1.jpg" alt="still life picture" /> 
-    <img src="./img/STILL_LIFE4.jpg" alt="still life picture" />
-    <img src="./img/STILL_LIFE3.jpg" alt="still life picture" />
-    </div>
-</div>
-`;function Gl(r){r.innerHTML=`
+`;function Vl(r){r.innerHTML=`
     <div class="aboutMe_main_container">
       <div>
         <h1>As a junior 3D generalist and junior motion capture specialist, I am passionate about discovering new ways to illustrate ideas, send messages and, above all, create cool stuff. I love diving into a universe and contributing to enrich it.</h1>
@@ -139,7 +130,7 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
       <h1>Or send me a message, I would be super happy to talk with you!</h1>
       <h1 id="copyEmail">contact@jeremiejaouen.ch</h1>
     </div>
-  `;const e=document.getElementById("copyEmail");e.addEventListener("click",()=>{navigator.clipboard.writeText("contact@jeremiejaouen.ch"),e.style.fontStyle="italic",e.innerHTML="copied to clipboard",setTimeout(()=>{e.style.fontStyle="normal",e.innerHTML="contact@jeremiejaouen.ch"},1e3)})}function Wl(r){r.innerHTML=`
+  `;const e=document.getElementById("copyEmail");e.addEventListener("click",()=>{navigator.clipboard.writeText("contact@jeremiejaouen.ch"),e.style.fontStyle="italic",e.innerHTML="copied to clipboard",setTimeout(()=>{e.style.fontStyle="normal",e.innerHTML="contact@jeremiejaouen.ch"},1e3)})}function Gl(r){r.innerHTML=`
     <div class="ETB_main_container">
       <div class="ETB_grid_container">
         <div class="ETB_grid_item">
@@ -199,7 +190,7 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
         </div>
       </div>
     </div>
-  `}const Xl=`
+  `}const Wl=`
   <div
     style="padding: 15dvh 15dvw 15dvh 15dvw; justify-content: center; position: absolute; overflow-x: scroll;"
     class="content_main_container_page"
@@ -211,18 +202,18 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
     >
       <div class="epesse_h1">
         <h1 class="epesse_h1_h1">
-          Epesses nouveau en fête: 2025
+          Epesses nouveau en fête — 2025
         </h1>
         <p>
-          Concours remporté pour la création de l'étiquette des bouteilles du festival
-          <a href="https://epesses-calamin.ch/fr/">Epesses nouveau en fête</a>.
+          Won the contest to design the bottle labels for the
+          <a href="https://epesses-calamin.ch/fr/">Epesses nouveau en fête</a> festival.
         </p>
       </div>
       <img src="./img/epesse_black.jpg" alt="still life picture" />
       <img src="./img/epesse_orange.jpg" alt="still life picture" />
     </div>
   </div>
-`,ql=`
+`,Xl=`
 <div class="ptt_main">
   <div class="PTT_img_container">
   <div class="ptt_img">
@@ -243,6 +234,41 @@ To enrich the universe, we mixed techniques: drawing, 3D, and pottery.<br>
   The film won both the audience award and the jury prize.
   </p>
   </div>
+  </div>
+</div>
+`,ql=`
+<div class="content_main_container_page alerte_soiree_page">
+  <div class="vimeo_container">
+  <iframe src="https://player.vimeo.com/video/1199474141?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="2221X Alerte Soirée"></iframe><script src="https://player.vimeo.com/api/player.js"><\/script>
+  </div>
+  <div class="vimeo_container">
+  <iframe src="https://player.vimeo.com/video/1199472343?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="2221X Alerte Soirée"></iframe><script src="https://player.vimeo.com/api/player.js"><\/script>
+  </div>
+  <div class="text_container">
+  <div class="content_container_2">
+  <h1>2221X Alerte Soirée - 2026</h1>
+  <p>
+  This project was created for one of the 2221 parties. As a member of the creative team, I handled the VJing.
+  <br><br>
+  This opportunity served as my introduction to TouchDesigner.
+  <br><br>
+  The visuals were sound-reactive, projected onto an 8:1 aspect ratio LED screen, and could be adapted to display the names of the DJs.
+  <br><br>
+  I also filmed and edited the movie, which you can watch here.
+  </p>
+  </div>
+  <div style="margin-top: 50px;">
+  <p>
+  Made with:
+  <br>
+  Blender, After Effects, Premiere Pro, TouchDesigner, no ai used<br><br>
+  </p>
+  <p>Credits: <br>
+  Music: <a href="https://www.youtube.com/watch?v=EN3jkdBiyq8&list=RDEN3jkdBiyq8&start_radio=1">Downtown - Plaudo</a>, <a href="https://www.youtube.com/watch?v=Dtd651AH87Y&list=RDDtd651AH87Y&start_radio=1">Raving In The Studio, Aitch, Bou</a>
+  <br>
+  Cover: <a href="https://www.instagram.com/kilian_aiello/">Killian Aiello</a>
+  </p>
+</div>
   </div>
 </div>
 `;/**
@@ -4098,6 +4124,7 @@ void main() {
         ></iframe>
         <script src="https://player.vimeo.com/api/player.js"><\/script>
       </div>
+      <img class="project_img" id="img8" src="./img/alerte_soiree.jpeg">
       <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
@@ -4105,7 +4132,8 @@ void main() {
       <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
-      <img class="project_img" id="img6" src="./stillLife.jpg">
+      <!-- <img class="project_img" id="img6" src="./stillLife.jpg"> archived -->
+
       <div class="project_img" id="emptyTheBin"></div>
       <img class="project_img" id="aboutMe" src="./img/pp.jpeg">
       
@@ -4122,12 +4150,12 @@ void main() {
     <div id="contentPage"></div>
   </div>
   <div id="scrollHint">scroll down to see more</div>
-`;const lo=document.querySelector("#img_scroll_bar"),kc=lo.querySelectorAll("img, .showReel, #Contact, #emptyTheBin"),F_=lo.querySelectorAll("img, div"),Or=document.getElementById("title"),gi=document.getElementById("projectPage"),Br=document.getElementById("contentPage"),O_=document.querySelector(".main_container");console.log(O_);const Hr={img0:["48H FILM","PROJECT",ql],img1:["NUMA","SUPPLY",Bl],img2:["POPOF","??????",Ol],img3:["RANDOM","SHOT 1",Hl],img4:["DIGITAL","KINGDOM",kl],img5:["TINY","TROUBLES",zl],img7:["EPESSES","EN FETE",Xl],img6:["NATURE","MORTE",Vl],emptyTheBin:["EMPTY","THE BIN",Wl],aboutMe:["ABOUT","ME",Gl],default:["Portfolio","Jérémie J."]};var is=window.matchMedia("(max-width: 500px)");let _i=!1,Oa=!1,Ba=null;lo.addEventListener("scroll",()=>{if(is.matches){let e=null,t=1/0;if(kc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.left+i.width/2,a=Math.abs(s-window.innerWidth/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");const[i,s,a]=Hr[n]||Hr.default;if(Or.innerHTML=`
+`;const lo=document.querySelector("#img_scroll_bar"),kc=lo.querySelectorAll("img, .showReel, #Contact, #emptyTheBin"),F_=lo.querySelectorAll("img, div"),Or=document.getElementById("title"),gi=document.getElementById("projectPage"),Br=document.getElementById("contentPage"),O_=document.querySelector(".main_container");console.log(O_);const Hr={img8:["2221","",ql],img0:["48H FILM","PROJECT",Xl],img1:["NUMA","SUPPLY",Bl],img2:["POPOF","??????",Ol],img3:["RANDOM","SHOT 1",Hl],img4:["DIGITAL","KINGDOM",kl],img5:["TINY","TROUBLES",zl],img7:["EPESSES","EN FETE",Wl],emptyTheBin:["EMPTY","THE BIN",Gl],aboutMe:["ABOUT","ME",Vl],default:["Portfolio","Jérémie J."]};var is=window.matchMedia("(max-width: 500px)");let _i=!1,Oa=!1,Ba=null;lo.addEventListener("scroll",()=>{if(is.matches){let e=null,t=1/0;if(kc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.left+i.width/2,a=Math.abs(s-window.innerWidth/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");document.documentElement.classList.toggle("theme-alerte",n==="img8");const[i,s,a]=Hr[n]||Hr.default;if(Or.innerHTML=`
         <h1 class="titleLine">${i}</h1>
         <h1 class="titleLine">${s}</h1>
       `,typeof a=="function"?a(Br):Br.innerHTML=`
       ${a}
-      `,n==="img3"){let c=function(){const l=Math.random()*3e3+5e3;setTimeout(()=>{o.textContent="SH1T O",setTimeout(()=>{o.textContent="SHOT 1",c()},500)},l)};var r=c;const o=Or.querySelectorAll(".titleLine")[1];c()}e.classList.contains("showReel")?(gi.style.display="none",Kn.classList.remove("hint-bar","hint-nudge")):gi.style.display="block"}_i&&!Oa&&(clearTimeout(Ba),Ba=setTimeout(()=>{gi.style.display!=="none"&&Kn.scrollTop<20&&Kn.classList.add("hint-bar","hint-nudge")},500))}else{let e=null,t=1/0;if(kc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.top+i.height/2,a=Math.abs(s-window.innerHeight/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");const[i,s,a]=Hr[n]||Hr.default;if(Or.innerHTML=`
+      `,n==="img3"){let c=function(){const l=Math.random()*3e3+5e3;setTimeout(()=>{o.textContent="SH1T O",setTimeout(()=>{o.textContent="SHOT 1",c()},500)},l)};var r=c;const o=Or.querySelectorAll(".titleLine")[1];c()}e.classList.contains("showReel")?(gi.style.display="none",Kn.classList.remove("hint-bar","hint-nudge")):gi.style.display="block"}_i&&!Oa&&(clearTimeout(Ba),Ba=setTimeout(()=>{gi.style.display!=="none"&&Kn.scrollTop<20&&Kn.classList.add("hint-bar","hint-nudge")},500))}else{let e=null,t=1/0;if(kc.forEach(n=>{const i=n.getBoundingClientRect(),s=i.top+i.height/2,a=Math.abs(s-window.innerHeight/2);a<t&&(t=a,e=n)}),e){let n=e.id||(e.classList.contains("showReel")?"showReel":"default");document.documentElement.classList.toggle("theme-alerte",n==="img8");const[i,s,a]=Hr[n]||Hr.default;if(Or.innerHTML=`
         <h1 class="titleLine">${i}</h1>
         <h1 class="titleLine">${s}</h1>
       `,n==="img3"){let c=function(){const u=Math.random()*3e3+3e3;setTimeout(()=>{o.textContent="SH1T O",setTimeout(()=>{o.textContent="SHOT 1",c()},500)},u)};var r=c;const o=Or.querySelectorAll(".titleLine")[1];c()}F_.forEach(o=>{o.addEventListener("click",function(){gi.style.right="0dvw",typeof a=="function"?a(Br):Br.innerHTML=`
