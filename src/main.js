@@ -10,6 +10,7 @@ import emptyTheBin from './emptyTheBin.js'
 import epesse from "./epesse.js"
 import pasTaTarte from './pasTaTarte.js'
 import alerteSoiree from './alerteSoiree.js'
+import musicClip from './musicClip.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -27,6 +28,7 @@ document.querySelector('#app').innerHTML = `
         ></iframe>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
+      <img class="project_img" id="img9" src="./H.LL/minia_portfolio.png">
       <img class="project_img" id="img8" src="./img/alerte_soiree.jpeg">
       <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
       <img class="project_img" id="img1" src="./numa.jpg">
@@ -66,6 +68,7 @@ console.log(mainContainer);
 
 
 const titleMap = {
+  img9: ["MUSIC", "CLIP (WIP)", musicClip],
   img8: ["2221", "", alerteSoiree],
   img0: ["48H FILM", "PROJECT", pasTaTarte],
   img1: ["NUMA", "SUPPLY", numaHtml],

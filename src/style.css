@@ -221,6 +221,47 @@ iframe {
   text-wrap: pretty;
 }
 
+.music_clip_page {
+  gap: 15px;
+}
+
+.music_clip_page .vimeo_container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.music_clip_page .text_container {
+  margin-left: 15px;
+  gap: 30px;
+}
+
+.music_clip_page .text_container h1 {
+  white-space: normal;
+  font-size: clamp(1rem, 2dvw, 1.6rem);
+  line-height: 1.2;
+}
+
+.music_clip_page .text_container p {
+  font-size: clamp(0.75rem, 1.1dvw, 1rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.music_clip_video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+.music_clip_video iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 #natureMortePicture img {
   height: 70dvh;
 }
@@ -507,6 +548,30 @@ iframe {
     display: block;
     content: "";
     margin-top: 6px;
+  }
+
+  .music_clip_page {
+    height: auto;
+    gap: 15px;
+  }
+
+  .music_clip_page .vimeo_container {
+    width: 100%;
+    height: auto;
+  }
+
+  .music_clip_page .text_container {
+    margin-left: 0;
+  }
+
+  .music_clip_page .text_container h1 {
+    font-size: clamp(1rem, 5dvw, 1.4rem);
+  }
+
+  .music_clip_page .text_container p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-wrap: pretty;
   }
 
   #natureMortePicture img {
