@@ -1,4 +1,6 @@
 export default `
+<div class="music_clip_scroll">
+<div class="music_clip_inner">
 <div class="content_main_container_page music_clip_page">
   <div class="vimeo_container">
   <video src="./H.LL/rendu_wip.mp4" autoplay loop muted playsinline></video>
@@ -17,9 +19,14 @@ export default `
   <p>
   Made with:
   <br>
-  Marvelous Designer, Blender, Substance Painter, no ai used
+  Marvelous Designer, Blender, Substance Painter, After Effects, no AI was used in this project.
   </p>
-</div>
   </div>
+  </div>
+</div>
+<div class="music_clip_research">
+  <video src="./H.LL/hll_research_web.mp4" autoplay loop muted playsinline></video>
+</div>
+</div>
 </div>
 `

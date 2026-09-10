@@ -249,6 +249,34 @@ iframe {
   text-wrap: pretty;
 }
 
+.music_clip_scroll {
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.music_clip_inner {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.music_clip_page {
+  width: fit-content;
+}
+
+.music_clip_research {
+  width: 0;
+  min-width: 100%;
+  padding: 0 0 15dvh 15dvw;
+}
+
+.music_clip_research video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
 .music_clip_video {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -511,7 +539,7 @@ iframe {
 
   .content_main_container_page {
     flex-direction: column;
-    padding: 10dvh 15dvw 15dvh 15dvw;
+    padding: 10dvh 15dvw 5dvh 15dvw;
     height: 100%;
   }
 
@@ -572,6 +600,23 @@ iframe {
     font-size: 0.85rem;
     line-height: 1.5;
     text-wrap: pretty;
+  }
+
+  .music_clip_inner {
+    width: 100%;
+  }
+
+  .music_clip_page {
+    width: 100%;
+  }
+
+  .music_clip_scroll {
+    height: auto;
+    overflow: visible;
+  }
+
+  .music_clip_research {
+    padding: 0 15dvw 15dvh 15dvw;
   }
 
   #natureMortePicture img {
