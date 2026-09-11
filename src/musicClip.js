@@ -27,6 +27,9 @@ export default `
 <div class="music_clip_research">
   <video src="./H.LL/hll_research_web.mp4" autoplay loop muted playsinline></video>
 </div>
+<div class="music_clip_research">
+  <video src="./H.LL/H.LL research_2_web.mp4" autoplay loop muted playsinline></video>
+</div>
 </div>
 </div>
 `
