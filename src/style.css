@@ -87,10 +87,6 @@ section {
 
 }
 
-#img1 {
-  background: linear-gradient(black, white);
-}
-
 .showReel {
   min-height: 40dvh;
   width: auto;
@@ -125,6 +121,10 @@ section {
   opacity: 1;
 }
 
+.video_preview.landscape {
+  aspect-ratio: 16 / 9;
+}
+
 #img10 {
   height: 60dvh;
   background-image: url(../brand_ad/thumbnail.jpg);
@@ -132,6 +132,26 @@ section {
 
 #img9 {
   background-image: url(../H.LL/minia_portfolio.png);
+}
+
+#img8 {
+  background-image: url(../img/alerte_soiree.jpeg);
+}
+
+#img0 {
+  background-image: url(../img/pas-ta-tarte/7.png);
+}
+
+#img1 {
+  background-image: url(../numa.jpg);
+}
+
+#img2 {
+  background-image: url(../popof.jpg);
+}
+
+#img5 {
+  background-image: url(../tinytrouble.jpg);
 }
 
 #img5 {
@@ -521,9 +541,11 @@ iframe {
     height: auto;
   }
 
+  /* 5dvh shorter than the music clip (#img9, 60dvw at 9:16) to break the line
+     between them; the width follows from the aspect-ratio. */
   #img10 {
-    width: 60dvw;
-    height: auto;
+    width: auto;
+    height: calc(60dvw * 16 / 9 - 5dvh);
   }
 
   #img_scroll_bar {

@@ -34,13 +34,23 @@ document.querySelector('#app').innerHTML = `
       <div class="project_img video_preview" id="img9">
         <video src="./H.LL/rendu_wip.mp4" muted loop playsinline preload="metadata"></video>
       </div>
-      <img class="project_img" id="img8" src="./img/alerte_soiree.jpeg">
-      <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
-      <img class="project_img" id="img1" src="./numa.jpg">
-      <img class="project_img" id="img2" src="./popof.jpg">
+      <div class="project_img video_preview" id="img8">
+        <video src="./preview/2221_pr.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="project_img video_preview landscape" id="img0">
+        <video src="./preview/cheapmo_pr.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="project_img video_preview" id="img1">
+        <video src="./preview/numa_pr.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="project_img video_preview landscape" id="img2">
+        <video src="./preview/popof_pr.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
       <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
-      <img class="project_img" id="img5" src="./tinytrouble.jpg">
+      <div class="project_img video_preview landscape" id="img5">
+        <video src="./preview/tintrouble_pr.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
       <!-- <img class="project_img" id="img6" src="./stillLife.jpg"> archived -->
 
       <div class="project_img" id="emptyTheBin"></div>
@@ -81,6 +91,16 @@ const videoPreviews = [...scrollBar.querySelectorAll('.video_preview')].map((el)
   return preview
 })
 
+// play() is rejected when the video hasn't buffered enough yet (or was paused
+// mid-request): retry as soon as it can play, as long as it's still focused.
+function playPreview(preview) {
+  if (!preview.focused) return
+  preview.video.preload = 'auto'
+  preview.video.play().catch(() => {
+    preview.video.addEventListener('canplay', () => playPreview(preview), { once: true })
+  })
+}
+
 function updateVideoPreviews(key) {
   videoPreviews.forEach((preview) => {
     const focused = key === preview.el.id
@@ -89,7 +109,7 @@ function updateVideoPreviews(key) {
     clearTimeout(preview.pauseTimer)
     if (focused) {
       if (!preview.video.paused) preview.el.classList.add('is-playing')
-      preview.video.play().catch(() => {})
+      playPreview(preview)
     } else {
       preview.el.classList.remove('is-playing')
       preview.pauseTimer = setTimeout(() => preview.video.pause(), 800)
