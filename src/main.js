@@ -85,8 +85,10 @@ console.log(mainContainer);
 // the focused one.
 const videoPreviews = [...scrollBar.querySelectorAll('.video_preview')].map((el) => {
   const preview = { el, video: el.querySelector('video'), focused: false, pauseTimer: null }
+  // Checks currentKey rather than preview.focused: Rollup's tree-shaking
+  // assumed `focused` stays false and emptied this listener in production.
   preview.video.addEventListener('playing', () => {
-    if (preview.focused) el.classList.add('is-playing')
+    if (currentKey === el.id) el.classList.add('is-playing')
   })
   return preview
 })
