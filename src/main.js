@@ -1,7 +1,6 @@
 import './style.css'
 import popofHtml from "./popofProject.js"
 import numaHtml from "./numaProject.js"
-import mdHtml from "./md.js"
 import dkHtml from "./DK.js"
 import tinyTroubleshtml from "./Tinytroubles.js"
 // import natureMorteHtml from "./natureMorteHtml.js"  // archived
@@ -11,6 +10,7 @@ import epesse from "./epesse.js"
 import pasTaTarte from './pasTaTarte.js'
 import alerteSoiree from './alerteSoiree.js'
 import musicClip from './musicClip.js'
+import brandAd from './brandAd.js'
 import * as THREE from "three"
 import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
@@ -28,12 +28,16 @@ document.querySelector('#app').innerHTML = `
         ></iframe>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
-      <img class="project_img" id="img9" src="./H.LL/minia_portfolio.png">
+      <div class="project_img video_preview" id="img10">
+        <video src="./brand_ad/rocher_flottant.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="project_img video_preview" id="img9">
+        <video src="./H.LL/rendu_wip.mp4" muted loop playsinline preload="metadata"></video>
+      </div>
       <img class="project_img" id="img8" src="./img/alerte_soiree.jpeg">
       <img class="project_img" id="img0" src="./img/pas-ta-tarte/7.png">
       <img class="project_img" id="img1" src="./numa.jpg">
       <img class="project_img" id="img2" src="./popof.jpg">
-      <img class="project_img" id="img3" src="./md.jpg">
       <img class="project_img" id="img7" src="./img/epesse_black.jpg">
       <img class="project_img" id="img4" src="./DK.jpg">
       <img class="project_img" id="img5" src="./tinytrouble.jpg">
@@ -58,7 +62,7 @@ document.querySelector('#app').innerHTML = `
 `
 
 const scrollBar = document.querySelector('#img_scroll_bar')
-const scrollItems = scrollBar.querySelectorAll('img, .showReel, #Contact, #emptyTheBin')
+const scrollItems = scrollBar.querySelectorAll('img, .showReel, #Contact, #emptyTheBin, .video_preview')
 const clickableItem = scrollBar.querySelectorAll('img, div')
 const title = document.getElementById("title")
 const projectPage = document.getElementById('projectPage')
@@ -67,13 +71,39 @@ const mainContainer = document.querySelector(".main_container")
 console.log(mainContainer);
 
 
+// Video thumbnails: the video plays (with a fade) only while its project is
+// the focused one.
+const videoPreviews = [...scrollBar.querySelectorAll('.video_preview')].map((el) => {
+  const preview = { el, video: el.querySelector('video'), focused: false, pauseTimer: null }
+  preview.video.addEventListener('playing', () => {
+    if (preview.focused) el.classList.add('is-playing')
+  })
+  return preview
+})
+
+function updateVideoPreviews(key) {
+  videoPreviews.forEach((preview) => {
+    const focused = key === preview.el.id
+    if (focused === preview.focused) return
+    preview.focused = focused
+    clearTimeout(preview.pauseTimer)
+    if (focused) {
+      if (!preview.video.paused) preview.el.classList.add('is-playing')
+      preview.video.play().catch(() => {})
+    } else {
+      preview.el.classList.remove('is-playing')
+      preview.pauseTimer = setTimeout(() => preview.video.pause(), 800)
+    }
+  })
+}
+
 const titleMap = {
+  img10: ["ROCK", "PROJECT (WIP)", brandAd],
   img9: ["MUSIC", "CLIP (WIP)", musicClip],
   img8: ["2221", "", alerteSoiree],
   img0: ["48H FILM", "PROJECT", pasTaTarte],
   img1: ["NUMA", "SUPPLY", numaHtml],
   img2: ["POPOF", "??????", popofHtml],
-  img3: ["RANDOM", "SHOT 1", mdHtml],
   img4: ["DIGITAL", "KINGDOM", dkHtml],
   img5: ["TINY", "TROUBLES", tinyTroubleshtml],
   img7: ["EPESSES", "EN FETE", epesse],
@@ -91,127 +121,94 @@ let userHasScrolled = false
 let verticalScrollDone = false
 let settleTimer = null
 
+// Project currently focused in the scroll bar. The title and the project page
+// are only (re)rendered when it changes: re-rendering on every scroll event
+// reloads all the videos/iframes of the page.
+let currentKey = null
+
+function renderProject(key) {
+  const [, , content] = titleMap[key] || titleMap.default
+  if (typeof content === "function") {
+    content(contentPage)
+  } else {
+    contentPage.innerHTML = content || ""
+  }
+}
+
+function getFocusedItem() {
+  let closestItem = null
+  let closestDistance = Infinity
+
+  scrollItems.forEach((item) => {
+    const rect = item.getBoundingClientRect()
+    const distance = x.matches
+      ? Math.abs(rect.left + rect.width / 2 - window.innerWidth / 2)
+      : Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2)
+    if (distance < closestDistance) {
+      closestDistance = distance
+      closestItem = item
+    }
+  })
+  return closestItem
+}
+
 scrollBar.addEventListener('scroll', () => {
-  if (x.matches) {
-    let closestItem = null
-    let closestDistance = Infinity
+  const closestItem = getFocusedItem()
 
-    scrollItems.forEach((item) => {
-      const rect = item.getBoundingClientRect()
-      const itemMid = rect.left + rect.width / 2
-      const distance = Math.abs(itemMid - window.innerWidth / 2)
-      if (distance < closestDistance) {
-        closestDistance = distance
-        closestItem = item
-      }
-    })
+  if (closestItem) {
+    const key = closestItem.id ||
+      (closestItem.classList.contains("showReel") ? "showReel" : "default")
 
-    if (closestItem) {
-      let key = closestItem.id ||
-        (closestItem.classList.contains("showReel") ? "showReel" : "default")
+    if (key !== currentKey) {
+      currentKey = key
       document.documentElement.classList.toggle('theme-alerte', key === 'img8')
-      const [line1, line2, line3] = titleMap[key] || titleMap.default
+      updateVideoPreviews(key)
+      const [line1, line2] = titleMap[key] || titleMap.default
       title.innerHTML = `
         <h1 class="titleLine">${line1}</h1>
         <h1 class="titleLine">${line2}</h1>
       `
-      if (typeof line3 === "function") {
-        line3(contentPage)
-      } else {
-        contentPage.innerHTML = `
-      ${line3}
-      `
+      if (x.matches) {
+        renderProject(key)
       }
-      if (key === "img3") {
-        const secondLine = title.querySelectorAll(".titleLine")[1]
-        function glitchLoop() {
-          const randomDelay = Math.random() * (8000 - 5000) + 5000
-          setTimeout(() => {
-            secondLine.textContent = "SH1T O"
-            setTimeout(() => {
-              secondLine.textContent = "SHOT 1"
-              glitchLoop()
-            }, 500)
-          }, randomDelay)
-        }
-        glitchLoop()
-      }
-      if (closestItem.classList.contains("showReel")) {
+    }
+
+    if (x.matches) {
+      if (key === "showReel") {
         projectPage.style.display = "none"
         app.classList.remove("hint-bar", "hint-nudge")
       } else {
         projectPage.style.display = "block"
       }
     }
+  }
 
-    // Once the user has genuinely browsed and settles on a real project (at the
-    // top of #app), slide the "scroll down" banner up and nudge the page with it.
-    if (userHasScrolled && !verticalScrollDone) {
-      clearTimeout(settleTimer)
-      settleTimer = setTimeout(() => {
-        if (projectPage.style.display !== "none" && app.scrollTop < 20) {
-          app.classList.add("hint-bar", "hint-nudge")
-        }
-      }, 500)
-    }
-  } else {
-    let closestItem = null
-    let closestDistance = Infinity
-
-    scrollItems.forEach((item) => {
-      const rect = item.getBoundingClientRect()
-      const itemMid = rect.top + rect.height / 2
-      const distance = Math.abs(itemMid - window.innerHeight / 2)
-      if (distance < closestDistance) {
-        closestDistance = distance
-        closestItem = item
+  // Once the user has genuinely browsed and settles on a real project (at the
+  // top of #app), slide the "scroll down" banner up and nudge the page with it.
+  if (x.matches && userHasScrolled && !verticalScrollDone) {
+    clearTimeout(settleTimer)
+    settleTimer = setTimeout(() => {
+      if (projectPage.style.display !== "none" && app.scrollTop < 20) {
+        app.classList.add("hint-bar", "hint-nudge")
       }
-    })
-
-    if (closestItem) {
-      let key = closestItem.id ||
-        (closestItem.classList.contains("showReel") ? "showReel" : "default")
-      document.documentElement.classList.toggle('theme-alerte', key === 'img8')
-      const [line1, line2, line3] = titleMap[key] || titleMap.default
-      title.innerHTML = `
-        <h1 class="titleLine">${line1}</h1>
-        <h1 class="titleLine">${line2}</h1>
-      `
-      if (key === "img3") {
-        const secondLine = title.querySelectorAll(".titleLine")[1]
-        function glitchLoop() {
-          const randomDelay = Math.random() * (6000 - 3000) + 3000
-          setTimeout(() => {
-            secondLine.textContent = "SH1T O"
-            setTimeout(() => {
-              secondLine.textContent = "SHOT 1"
-              glitchLoop()
-            }, 500)
-          }, randomDelay)
-        }
-        glitchLoop()
-      }
-      clickableItem.forEach(item => {
-        item.addEventListener("click", function () {
-          projectPage.style.right = "0dvw"
-          if (typeof line3 === "function") {
-            line3(contentPage)
-          } else {
-            contentPage.innerHTML = `
-            ${line3}
-            `
-          }
-        })
-      })
-    }
+    }, 500)
   }
 })
 
-if (x.matches) {
-  document.getElementById("img_scroll_bar").addEventListener("click", function () {
-    projectPage.scrollIntoView()
+// Clicking a thumbnail opens the focused project. Registered once.
+clickableItem.forEach(item => {
+  item.addEventListener("click", function (event) {
+    if (x.matches) return
+    event.stopPropagation()
+    if (!currentKey) return
+    projectPage.style.right = "0dvw"
+    renderProject(currentKey)
   })
-}
+})
+
+scrollBar.addEventListener("click", function () {
+  if (x.matches) projectPage.scrollIntoView()
+})
 
 document.getElementById("backButton").addEventListener("click", function () {
   projectPage.style.right = "-100dvw"

@@ -8,8 +8,8 @@ export default function emptyTheBin(container) {
         <div class="ETB_grid_item ETB_parallax">
           <iframe src="https://player.vimeo.com/video/743324917?badge=0&loop=1&muted=1&autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="2022.01.17_parallaxe_JeremieJaouen_ID401.mov"></iframe>
         </div>
-        <div class="ETB_grid_item ETB_rocher">
-          <video src="./rocher flottant.mp4" autoplay loop muted playsinline></video>
+        <div class="ETB_grid_item ETB_md">
+          <img src="./img/MD1.jpg" alt="Marvelous Designer shot">
         </div>
         <div class="ETB_grid_item ETB_galaxy">
           <iframe src="https://jeremmie.github.io/galaxy_generator_animate-build-/"></iframe>
